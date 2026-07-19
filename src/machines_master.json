@@ -1,0 +1,46 @@
+[
+  { "id": "auto-betonniere-3-5m3", "category": "Bâtiment & Construction", "designation": { "fr": "AUTO BÉTONNIÈRE 3.5m³", "en": "AUTO CONCRETE MIXER" } },
+  { "id": "pelle-hydraulique-20t", "category": "Bâtiment & Construction", "designation": { "fr": "PELLE HYDRAULIQUE 20T", "en": "20T EXCAVATOR" } },
+  { "id": "pelle-pneus-15t", "category": "Bâtiment & Construction", "designation": { "fr": "PELLE SUR PNEUS 15T", "en": "15T WHEELED EXCAVATOR" } },
+  { "id": "tractopelle-premium-4wd", "category": "Bâtiment & Construction", "designation": { "fr": "TRACTOPELLE PREMIUM 4WD", "en": "PREMIUM BACKHOE" } },
+  { "id": "mini-pelle-compacte", "category": "Bâtiment & Construction", "designation": { "fr": "MINI-PELLE COMPACTE", "en": "MINI EXCAVATOR" } },
+  { "id": "grue-tour-60m", "category": "Bâtiment & Construction", "designation": { "fr": "GRUE À TOUR 60M", "en": "TOWER CRANE" } },
+  { "id": "pompe-beton-37m", "category": "Bâtiment & Construction", "designation": { "fr": "POMPE À BÉTON 37M", "en": "CONCRETE PUMP" } },
+  { "id": "betonniere-portee-10m3", "category": "Bâtiment & Construction", "designation": { "fr": "BÉTONNIÈRE PORTÉE 10m³", "en": "TRUCK MIXER" } },
+
+  { "id": "pelle-miniere-33t", "category": "Mines & Carrières", "designation": { "fr": "PELLE MINIÈRE 33T", "en": "33T MINING EXCAVATOR" } },
+  { "id": "pelle-lourde-45t", "category": "Mines & Carrières", "designation": { "fr": "PELLE LOURDE 45T", "en": "45T HEAVY EXCAVATOR" } },
+  { "id": "pelle-extraction-60t", "category": "Mines & Carrières", "designation": { "fr": "PELLE D'EXTRACTION 60T", "en": "60T MINING EXCAVATOR" } },
+  { "id": "bulldozer-d6", "category": "Mines & Carrières", "designation": { "fr": "BULLDOZER D6", "en": "D6 BULLDOZER" } },
+  { "id": "bulldozer-d8", "category": "Mines & Carrières", "designation": { "fr": "BULLDOZER D8", "en": "D8 BULLDOZER" } },
+  { "id": "camion-hors-route-100t", "category": "Mines & Carrières", "designation": { "fr": "CAMION HORS-ROUTE 100T", "en": "100T MINING TRUCK" } },
+  { "id": "foreuse-rotative-lourde", "category": "Mines & Carrières", "designation": { "fr": "FOREUSE ROTATIVE LOURDE", "en": "ROTARY DRILL RIG" } },
+
+  { "id": "niveleuse-160hp", "category": "Construction Routière", "designation": { "fr": "NIVELEUSE 160HP", "en": "160HP MOTOR GRADER" } },
+  { "id": "compacteur-monobille-12t", "category": "Construction Routière", "designation": { "fr": "COMPACTEUR MONOBILLE 12T", "en": "12T SOIL COMPACTOR" } },
+  { "id": "finisseur-asphalte-6m", "category": "Construction Routière", "designation": { "fr": "FINISSEUR D'ASPHALTE 6M", "en": "6M ASPHALT PAVER" } },
+  { "id": "rouleau-tandem-9t", "category": "Construction Routière", "designation": { "fr": "ROULEAU TANDEM 9T", "en": "9T TANDEM ROLLER" } },
+  { "id": "balayeuse-aspiratrice", "category": "Construction Routière", "designation": { "fr": "BALAYEUSE ASPIRATRICE", "en": "STREET SWEEPER" } },
+  { "id": "repandeuse-bitume", "category": "Construction Routière", "designation": { "fr": "RÉPANDEUSE DE BITUME", "en": "BITUMEN SPRAYER" } },
+  { "id": "gravillonneur-automoteur", "category": "Construction Routière", "designation": { "fr": "GRAVILLONNEUR AUTOMOTEUR", "en": "CHIP SPREADER" } },
+
+  { "id": "chariot-elevateur-5t", "category": "Industrie & Entreposage", "designation": { "fr": "CHARIOT ÉLÉVATEUR 5T", "en": "5T FORKLIFT" } },
+  { "id": "chariot-telescopique-7m", "category": "Industrie & Entreposage", "designation": { "fr": "CHARIOT TÉLESCOPIQUE 7M", "en": "7M TELEHANDLER" } },
+  { "id": "chargeuse-pneus-3t", "category": "Industrie & Entreposage", "designation": { "fr": "CHARGEUSE SUR PNEUS 3T", "en": "3T WHEEL LOADER" } },
+  { "id": "camion-benne-6x4", "category": "Industrie & Entreposage", "designation": { "fr": "CAMION BENNE 6X4", "en": "6X4 DUMP TRUCK" } },
+  { "id": "pont-roulant-20t", "category": "Industrie & Entreposage", "designation": { "fr": "PONT ROULANT 20T", "en": "20T OVERHEAD CRANE" } },
+  { "id": "transpalette-electrique", "category": "Industrie & Entreposage", "designation": { "fr": "TRANSPALETTE ÉLECTRIQUE", "en": "ELECTRIC PALLET JACK" } },
+
+  { "id": "tracteur-agricole-150hp", "category": "Agriculture & Sylviculture", "designation": { "fr": "TRACTEUR AGRICOLE 150HP", "en": "150HP TRACTOR" } },
+  { "id": "moissonneuse-batteuse", "category": "Agriculture & Sylviculture", "designation": { "fr": "MOISSONNEUSE-BATTEUSE", "en": "COMBINE HARVESTER" } },
+  { "id": "pulverisateur-automoteur", "category": "Agriculture & Sylviculture", "designation": { "fr": "PULVÉRISATEUR AUTOMOTEUR", "en": "SELF-PROPELLED SPRAYER" } },
+  { "id": "semoir-precision", "category": "Agriculture & Sylviculture", "designation": { "fr": "SEMOIR DE PRÉCISION", "en": "PRECISION SEEDER" } },
+
+  { "id": "presse-balles-hydraulique", "category": "Gestion des Déchets", "designation": { "fr": "PRESSE À BALLES HYDRAULIQUE", "en": "WASTE BALER" } },
+  { "id": "broyeur-dechets-lourd", "category": "Gestion des Déchets", "designation": { "fr": "BROYEUR DE DÉCHETS LOURD", "en": "INDUSTRIAL SHREDDER" } },
+  { "id": "compacteur-decharge", "category": "Gestion des Déchets", "designation": { "fr": "COMPACTEUR DE DÉCHARGE", "en": "LANDFILL COMPACTOR" } },
+  { "id": "dechiqueteur-bois", "category": "Gestion des Déchets", "designation": { "fr": "DÉCHIQUETEUR DE BOIS", "en": "WOOD CHIPPER" } },
+
+  { "id": "groupe-electrogene-100kva", "category": "Services", "designation": { "fr": "GROUPE ÉLECTROGÈNE 100kVA", "en": "100kVA GENERATOR" } },
+  { "id": "groupe-electrogene-500kva", "category": "Services", "designation": { "fr": "GROUPE ÉLECTROGÈNE 500kVA", "en": "500kVA GENERATOR" } }
+]

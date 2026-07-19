@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mashal Equipment — site vitrine B2B
 
-## Getting Started
+Site web pour **Mashal Equipment** (Cotonou, Bénin) : catalogue machines, pièces, SAV et logistique export.
 
-First, run the development server:
+**Domaine cible :** [https://mashal.equipment](https://mashal.equipment)
+
+## Stack
+
+Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · Framer Motion
+
+## Local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Domain & email
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Canonical : **mashal.equipment** (`NEXT_PUBLIC_SITE_URL=https://mashal.equipment`).
 
-## Learn More
+### Boîte mail `contact@mashal.equipment`
 
-To learn more about Next.js, take a look at the following resources:
+1. Chez le registrar / Cloudflare du domaine → **Email Routing** (ou Google Workspace).
+2. Créer `contact@mashal.equipment` (forward Gmail ou boîte complète).
+3. Soumettre une fois le formulaire du site pour activer FormSubmit, puis confirmer l’e-mail reçu.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Optionnel : `FORMSPREE_ID` / `NEXT_PUBLIC_FORMSPREE_ID` (voir `.env.example`).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## SEO
 
-## Deploy on Vercel
+- Titles / descriptions FR orientés équipements lourds, pièces, SAV, export Afrique
+- Canonical + Open Graph
+- `sitemap.xml` (App Router) + `robots.txt`
+- Pages métier : `/machines`, `/pieces`, `/sav`, `/logistique`, `/articles`, `/a-propos`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Après déploiement : soumettre `https://mashal.equipment/sitemap.xml` dans [Google Search Console](https://search.google.com/search-console).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Scripts
+
+- `npm run build` — production build
+- `npm run lint` — ESLint
+- `node scripts/convert-machine-photos.mjs` — convertit les `.jpg` machines en `.webp`
+
+## Images machines
+
+1. Déposer `public/images/machines/{id-machine}.jpg`
+2. Lancer `node scripts/convert-machine-photos.mjs`
+3. Les cartes catalogue lisent les `.webp` (overrides famille dans `src/lib/machine-images.ts`)
+
+## Deploy
+
+Vercel (repo GitHub). Définir en production :
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://mashal.equipment
+```
+
+Optionnel :
+
+```bash
+FORMSPREE_ID=xxxxxxxx
+```
