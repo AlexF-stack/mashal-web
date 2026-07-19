@@ -2,192 +2,192 @@
   "auto-betonniere-3-5m3": {
     "file": "auto-betonniere-3-5m3.webp",
     "avif": "auto-betonniere-3-5m3.avif",
-    "alt": "Auto-bétonnière industrielle",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 153,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "pelle-hydraulique-20t": {
     "file": "pelle-hydraulique-20t.webp",
     "avif": "pelle-hydraulique-20t.avif",
-    "alt": "Pelle hydraulique 20 tonnes",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 51,
+    "source": "photo-catalog",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "pelle-pneus-15t": {
     "file": "pelle-pneus-15t.webp",
     "avif": "pelle-pneus-15t.avif",
-    "alt": "Pelle sur pneus construction",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 182,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "tractopelle-premium-4wd": {
     "file": "tractopelle-premium-4wd.webp",
     "avif": "tractopelle-premium-4wd.avif",
-    "alt": "Tractopelle lourde",
     "width": 1200,
     "height": 800,
-    "sizeKb": 15,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 94,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "mini-pelle-compacte": {
     "file": "mini-pelle-compacte.webp",
     "avif": "mini-pelle-compacte.avif",
-    "alt": "Mini-pelle de précision",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 91,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "pompe-beton-37m": {
     "file": "pompe-beton-37m.webp",
     "avif": "pompe-beton-37m.avif",
-    "alt": "Pompe à béton articulée",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 106,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "grue-tour-60m": {
     "file": "grue-tour-60m.webp",
     "avif": "grue-tour-60m.avif",
-    "alt": "Grue à tour de chantier",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 114,
+    "source": "photo-catalog",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "betonniere-portee-10m3": {
     "file": "betonniere-portee-10m3.webp",
     "avif": "betonniere-portee-10m3.avif",
-    "alt": "Bétonnière portée malaxeur",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 119,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "pelle-miniere-33t": {
     "file": "pelle-miniere-33t.webp",
     "avif": "pelle-miniere-33t.avif",
-    "alt": "Pelle minière d'extraction",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 72,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "pelle-lourde-45t": {
     "file": "pelle-lourde-45t.webp",
     "avif": "pelle-lourde-45t.avif",
-    "alt": "Pelle lourde de carrière",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 101,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "pelle-extraction-60t": {
     "file": "pelle-extraction-60t.webp",
     "avif": "pelle-extraction-60t.avif",
-    "alt": "Pelle d'extraction géante",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 230,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "bulldozer-d6": {
     "file": "bulldozer-d6.webp",
     "avif": "bulldozer-d6.avif",
-    "alt": "Bulldozer D6 terrassement",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 134,
+    "source": "photo-catalog",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "bulldozer-d8": {
     "file": "bulldozer-d8.webp",
     "avif": "bulldozer-d8.avif",
-    "alt": "Bulldozer D8 haute puissance",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 89,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "foreuse-rotative-lourde": {
     "file": "foreuse-rotative-lourde.webp",
     "avif": "foreuse-rotative-lourde.avif",
-    "alt": "Foreuse rotative de mine",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 83,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "camion-hors-route-100t": {
     "file": "camion-hors-route-100t.webp",
     "avif": "camion-hors-route-100t.avif",
-    "alt": "Camion minier 100 tonnes",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 140,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "niveleuse-160hp": {
     "file": "niveleuse-160hp.webp",
     "avif": "niveleuse-160hp.avif",
-    "alt": "Niveleuse de route",
     "width": 1200,
     "height": 800,
-    "sizeKb": 15,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 143,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "compacteur-monobille-12t": {
     "file": "compacteur-monobille-12t.webp",
     "avif": "compacteur-monobille-12t.avif",
-    "alt": "Compacteur de sol 12 tonnes",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 123,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "finisseur-asphalte-6m": {
     "file": "finisseur-asphalte-6m.webp",
     "avif": "finisseur-asphalte-6m.avif",
-    "alt": "Finisseur d'enrobé 6m",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 138,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "rouleau-tandem-9t": {
     "file": "rouleau-tandem-9t.webp",
     "avif": "rouleau-tandem-9t.avif",
-    "alt": "Rouleau tandem finition",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 145,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "balayeuse-voirie": {
     "file": "balayeuse-voirie.webp",
@@ -202,181 +202,191 @@
   "repandeuse-bitume": {
     "file": "repandeuse-bitume.webp",
     "avif": "repandeuse-bitume.avif",
-    "alt": "Répandeuse de bitume routière",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 146,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "gravillonneur-automoteur": {
     "file": "gravillonneur-automoteur.webp",
     "avif": "gravillonneur-automoteur.avif",
-    "alt": "Gravillonneur de route",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 171,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "chariot-elevateur-5t": {
     "file": "chariot-elevateur-5t.webp",
     "avif": "chariot-elevateur-5t.avif",
-    "alt": "Chariot élévateur logistique",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 104,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "chariot-telescopique-7m": {
     "file": "chariot-telescopique-7m.webp",
     "avif": "chariot-telescopique-7m.avif",
-    "alt": "Chariot télescopique 7m",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 94,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "chargeuse-pneus-3t": {
     "file": "chargeuse-pneus-3t.webp",
     "avif": "chargeuse-pneus-3t.avif",
-    "alt": "Chargeuse industrielle",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 96,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "camion-benne-6x4": {
     "file": "camion-benne-6x4.webp",
     "avif": "camion-benne-6x4.avif",
-    "alt": "Camion benne 6x4",
     "width": 1200,
     "height": 800,
-    "sizeKb": 15,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 108,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "pont-roulant-20t": {
     "file": "pont-roulant-20t.webp",
     "avif": "pont-roulant-20t.avif",
-    "alt": "Pont roulant industriel",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 54,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "transpalette-electrique": {
     "file": "transpalette-electrique.webp",
     "avif": "transpalette-electrique.avif",
-    "alt": "Transpalette électrique",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 88,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "tracteur-agricole-150hp": {
     "file": "tracteur-agricole-150hp.webp",
     "avif": "tracteur-agricole-150hp.avif",
-    "alt": "Tracteur agricole puissant",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 162,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "moissonneuse-batteuse": {
     "file": "moissonneuse-batteuse.webp",
     "avif": "moissonneuse-batteuse.avif",
-    "alt": "Moissonneuse-batteuse champ",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 99,
+    "source": "photo-catalog",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "pulverisateur-automoteur": {
     "file": "pulverisateur-automoteur.webp",
     "avif": "pulverisateur-automoteur.avif",
-    "alt": "Pulvérisateur agricole",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 132,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "presse-balles-hydraulique": {
     "file": "presse-balles-hydraulique.webp",
     "avif": "presse-balles-hydraulique.avif",
-    "alt": "Presse à balles de déchets",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 182,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "semoir-precision": {
     "file": "semoir-precision.webp",
     "avif": "semoir-precision.avif",
-    "alt": "Semoir de précision",
     "width": 1200,
     "height": 800,
-    "sizeKb": 15,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 89,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "broyeur-dechets-lourd": {
     "file": "broyeur-dechets-lourd.webp",
     "avif": "broyeur-dechets-lourd.avif",
-    "alt": "Broyeur industriel lourd",
     "width": 1200,
     "height": 800,
-    "sizeKb": 16,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 150,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "compacteur-decharge": {
     "file": "compacteur-decharge.webp",
     "avif": "compacteur-decharge.avif",
-    "alt": "Compacteur de décharge",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 174,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "groupe-electrogene-500kva": {
     "file": "groupe-electrogene-500kva.webp",
     "avif": "groupe-electrogene-500kva.avif",
-    "alt": "Groupe électrogène 500kVA",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 104,
+    "source": "ai-generated",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "dechiqueteur-bois": {
     "file": "dechiqueteur-bois.webp",
     "avif": "dechiqueteur-bois.avif",
-    "alt": "Déchiqueteur de bois",
     "width": 1200,
     "height": 800,
-    "sizeKb": 15,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 144,
+    "source": "photo-catalog",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   },
   "groupe-electrogene-100kva": {
     "file": "groupe-electrogene-100kva.webp",
     "avif": "groupe-electrogene-100kva.avif",
-    "alt": "Groupe électrogène 100kVA",
     "width": 1200,
     "height": 800,
-    "sizeKb": 17,
-    "source": "blueprint-generator",
-    "updatedAt": "2026-05-13"
+    "sizeKb": 85,
+    "source": "photo-catalog",
+    "validated": true,
+    "updatedAt": "2026-07-19"
+  },
+  "balayeuse-aspiratrice": {
+    "file": "balayeuse-aspiratrice.webp",
+    "avif": "balayeuse-aspiratrice.avif",
+    "width": 1200,
+    "height": 800,
+    "sizeKb": 147,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-19"
   }
 }
