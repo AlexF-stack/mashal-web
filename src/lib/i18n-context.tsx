@@ -23,10 +23,7 @@ function readInitialLanguage(): Language {
   if (stored && supportedLanguages.includes(stored as Language)) {
     return stored as Language;
   }
-  const browserLang = window.navigator.language.split("-")[0];
-  if (supportedLanguages.includes(browserLang as Language)) {
-    return browserLang as Language;
-  }
+  // Marque francophone (Bénin) : FR par défaut, EN uniquement via switcher
   return defaultLanguage;
 }
 

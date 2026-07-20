@@ -22,7 +22,7 @@ export default function PageHero({
   primaryLabel,
   secondaryHref,
   secondaryLabel,
-  backgroundImage = "/images/hero-industrial.webp",
+  backgroundImage = "/visuals/excavator-worksite.jpg",
 }: PageHeroProps) {
   return (
     <section className="relative flex min-h-[58vh] items-end overflow-hidden pb-16 pt-36 md:min-h-[64vh] md:items-center md:pb-20 md:pt-40">
@@ -33,7 +33,7 @@ export default function PageHero({
           fill
           priority
           sizes="100vw"
-          className="object-cover brightness-[0.55]"
+          className="media-kenburns object-cover brightness-[0.55]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-[#0B1220]/45 to-[#0B1220]/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0B1220]/85 via-[#0B1220]/30 to-transparent" />

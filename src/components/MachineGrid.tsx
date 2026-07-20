@@ -7,6 +7,8 @@ import MachineSearch, { SearchFilters } from "./MachineSearch";
 import machinesData from "../machines_master.json";
 import { Machine } from "@/types/machine";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n-context";
+import { Reveal } from "@/components/motion/Reveal";
 
 const machines = machinesData as Machine[];
 
@@ -22,6 +24,7 @@ const categories = [
 ];
 
 export default function MachineGrid() {
+  const { t } = useI18n();
   const [activeCategory, setActiveCategory] = useState("Tous");
   const [searchFilters, setSearchFilters] = useState<SearchFilters>({
     search: "",
@@ -92,17 +95,15 @@ export default function MachineGrid() {
   return (
     <section id="catalog" className="relative bg-background py-20 md:py-28">
       <div className="container mx-auto px-6">
-        <div className="mb-10 max-w-2xl">
+        <Reveal className="mb-10 max-w-2xl">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-primary">
-            Catalogue
+            {t.home.catalogEyebrow}
           </p>
           <h2 className="mb-4 text-3xl leading-tight md:text-5xl">
-            Machines disponibles
+            {t.home.catalogTitle}
           </h2>
-          <p className="leading-relaxed text-foreground/65">
-            Filtrez par catégorie ou recherchez un modèle pour préparer votre devis.
-          </p>
-        </div>
+          <p className="leading-relaxed text-foreground/65">{t.home.catalogText}</p>
+        </Reveal>
 
         <MachineSearch onSearchChange={handleSearchChange} isLoading={false} />
 
@@ -115,17 +116,17 @@ export default function MachineGrid() {
                 "rounded-full px-4 py-2 text-xs font-semibold transition-colors",
                 activeCategory === category
                   ? "bg-primary text-background"
-                  : "border border-white/10 text-foreground/65 hover:border-primary/40 hover:text-foreground",
+                  : "border border-[color:var(--border)] text-foreground/65 hover:border-primary/40 hover:text-foreground",
               )}
             >
-              {category}
+              {category === "Tous" ? t.machines.allCategories : category}
             </button>
           ))}
         </div>
 
         <p className="mb-6 text-sm text-foreground/55">
-          {filteredMachines.length} référence
-          {filteredMachines.length > 1 ? "s" : ""}
+          {filteredMachines.length}{" "}
+          {filteredMachines.length > 1 ? t.home.refsPlural : t.home.refs}
         </p>
 
         <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6">

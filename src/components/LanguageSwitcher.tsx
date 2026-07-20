@@ -4,8 +4,13 @@ import { useState } from "react";
 import { Globe } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
 import { supportedLanguages, Language } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 
-export default function LanguageSwitcher() {
+type Props = {
+  variant?: "light" | "dark";
+};
+
+export default function LanguageSwitcher({ variant = "light" }: Props) {
   const { language, setLanguage } = useI18n();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -15,12 +20,18 @@ export default function LanguageSwitcher() {
   };
 
   const label = language === "fr" ? "Changer de langue" : "Change language";
+  const onDark = variant === "dark";
 
   return (
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-foreground transition-all duration-300 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+        className={cn(
+          "inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+          onDark
+            ? "border-white/25 bg-white/10 text-white hover:bg-white/20"
+            : "border-[color:var(--border)] bg-foreground/5 text-foreground hover:bg-foreground/10",
+        )}
         aria-label={label}
         aria-haspopup="true"
         aria-expanded={isOpen}
@@ -30,8 +41,8 @@ export default function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div 
-          className="absolute right-0 top-full mt-2 rounded-lg border border-white/10 bg-background shadow-lg z-50 overflow-hidden min-w-[120px]"
+        <div
+          className="absolute right-0 top-full z-50 mt-2 min-w-[140px] overflow-hidden rounded-xl border border-[color:var(--border)] bg-background text-foreground shadow-xl"
           role="menu"
         >
           {supportedLanguages.map((lang) => (
@@ -39,13 +50,14 @@ export default function LanguageSwitcher() {
               key={lang}
               onClick={() => handleLanguageChange(lang)}
               role="menuitem"
-              className={`block w-full px-4 py-2 text-left text-sm transition-colors focus:outline-none focus:bg-white/10 ${
+              className={cn(
+                "block w-full px-4 py-2.5 text-left text-sm transition-colors",
                 language === lang
-                  ? "bg-primary text-background font-bold"
-                  : "text-foreground hover:bg-white/5"
-              }`}
+                  ? "bg-primary font-bold text-background"
+                  : "hover:bg-foreground/5",
+              )}
             >
-              {lang === "fr" ? "🇫🇷 Français" : "🇬🇧 English"}
+              {lang === "fr" ? "Français" : "English"}
             </button>
           ))}
         </div>

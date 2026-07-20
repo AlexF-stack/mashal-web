@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 function subscribe(onStoreChange: () => void) {
   const observer = new MutationObserver(onStoreChange);
@@ -20,8 +21,13 @@ function getServerSnapshot() {
   return false;
 }
 
-export default function ThemeToggle() {
+type Props = {
+  variant?: "light" | "dark";
+};
+
+export default function ThemeToggle({ variant = "light" }: Props) {
   const isDark = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const onDark = variant === "dark";
 
   const toggle = () => {
     const next = !isDark;
@@ -34,9 +40,14 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label="Basculer le thème clair / sombre"
-      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/10 text-foreground shadow-sm transition-colors duration-300 hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      className={cn(
+        "inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+        onDark
+          ? "border-white/25 bg-white/10 text-white hover:bg-white/20"
+          : "border-[color:var(--border)] bg-foreground/5 text-foreground hover:bg-foreground/10",
+      )}
     >
-      {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+      {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
     </button>
   );
 }

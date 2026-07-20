@@ -219,12 +219,13 @@ export const logisticsSteps = [
 ];
 
 export const siteVisuals = {
-  hero: "/images/hero-industrial.webp",
+  hero: "/visuals/excavator-worksite.jpg",
   mining: "/mashal_hero_mining.png",
   worksite: "/visuals/excavator-worksite.jpg",
   parts: "/visuals/parts-stock.jpg",
   sav: "/visuals/sav-maintenance.jpg",
   logistics: "/visuals/logistics-port.jpg",
   loader: "/visuals/wheel-loader.jpg",
+  road: "/visuals/road.webp",
   founders: "/fondateurs-dossou.jpeg",
 } as const;

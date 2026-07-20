@@ -1,41 +1,72 @@
 // Dictionnaire français
 export const fr = {
-  // Navigation
   nav: {
     machines: "Machines",
     pieces: "Pièces",
     articles: "Articles",
     logistique: "Logistique",
     sav: "SAV",
-    aPropos: "À Propos",
+    aPropos: "À propos",
+    outils: "Outils",
     contact: "Contact",
+    devis: "Devis",
+    project: "Mon projet",
+    language: "Langue",
   },
-
-  // Machines
+  home: {
+    brand: "Mashal Equipment",
+    headline: "Engins, pièces et support",
+    headlineAccent: "pour chantiers exigeants",
+    sub:
+      "Catalogue machines, disponibilité des pièces, SAV et logistique export — un interlocuteur pour tout le cycle de vie.",
+    ctaCatalog: "Voir le catalogue",
+    ctaQuote: "Demander un devis",
+    servicesEyebrow: "Services",
+    servicesTitle: "Au-delà de la machine",
+    partsTitle: "Pièces détachées",
+    partsText: "Références critiques et disponibilité pour réduire les immobilisations.",
+    savTitle: "Service après-vente",
+    savText: "Diagnostic, maintenance planifiée et formation opérateurs.",
+    logisticsTitle: "Logistique export",
+    logisticsText: "Préparation, documentation et livraison internationale.",
+    explore: "Explorer",
+    sectorsEyebrow: "Secteurs",
+    sectorsTitle: "Adapté à chaque terrain",
+    sectorsText:
+      "Engins et services calés sur l'environnement opérationnel de vos équipes.",
+    catalogEyebrow: "Catalogue",
+    catalogTitle: "Machines disponibles",
+    catalogText: "Filtrez par catégorie ou recherchez un modèle pour préparer votre devis.",
+    refs: "référence",
+    refsPlural: "références",
+    ctaTitle: "Un projet machine, pièces ou",
+    ctaAccent: "export",
+    ctaSub: "Décrivez le modèle, le délai et l'urgence — réponse claire et actionnable.",
+    ctaButton: "Contacter l'équipe",
+  },
   machines: {
-    title: "Expertise Sérielle",
+    title: "Machines disponibles",
     subtitle: "Catalogue équipements lourds",
     searchPlaceholder: "Rechercher une machine...",
     filterByCategory: "Filtrer par catégorie",
-    allCategories: "Toutes les catégories",
+    allCategories: "Tous",
     noResults: "Aucune machine trouvée",
+    techSheet: "Fiche technique",
+    quoteDirect: "Demande de devis",
     specs: {
       power: "Puissance",
       weight: "Poids",
       engine: "Moteur",
       bucket: "Godet",
+      depth: "Prof. fouille",
     },
   },
-
-  // Services
   services: {
     parts: "Pièces détachées",
     logistics: "Logistique & Export",
     afterSales: "Service après-vente",
     training: "Formation",
   },
-
-  // Contact
   contact: {
     heading: "Contactez-nous",
     description: "Remplissez le formulaire pour nous envoyer votre demande",
@@ -43,8 +74,20 @@ export const fr = {
     success: "Message envoyé avec succès",
     error: "Erreur lors de l'envoi",
   },
-
-  // Common
+  footer: {
+    catalog: "Catalogue",
+    services: "Services",
+    machines: "Machines",
+    pieces: "Pièces détachées",
+    tools: "Outils",
+    sav: "Service après-vente",
+    logistics: "Logistique export",
+    articles: "Articles",
+    about: "À propos",
+    legal: "Mentions légales",
+    privacy: "Confidentialité",
+    rights: "Tous droits réservés.",
+  },
   common: {
     readMore: "En savoir plus",
     learnMore: "Découvrir",
@@ -54,9 +97,7 @@ export const fr = {
   },
 };
 
-// Dictionnaire anglais
 export const en = {
-  // Navigation
   nav: {
     machines: "Machines",
     pieces: "Parts",
@@ -64,34 +105,65 @@ export const en = {
     logistique: "Logistics",
     sav: "Support",
     aPropos: "About",
+    outils: "Tools",
     contact: "Contact",
+    devis: "Quote",
+    project: "My project",
+    language: "Language",
   },
-
-  // Machines
+  home: {
+    brand: "Mashal Equipment",
+    headline: "Machines, parts and support",
+    headlineAccent: "for demanding sites",
+    sub:
+      "Machine catalog, parts availability, after-sales and export logistics — one partner for the full lifecycle.",
+    ctaCatalog: "Browse catalog",
+    ctaQuote: "Request a quote",
+    servicesEyebrow: "Services",
+    servicesTitle: "Beyond the machine",
+    partsTitle: "Spare parts",
+    partsText: "Critical references and availability to cut downtime.",
+    savTitle: "After-sales service",
+    savText: "Diagnostics, planned maintenance and operator training.",
+    logisticsTitle: "Export logistics",
+    logisticsText: "Preparation, documentation and international delivery.",
+    explore: "Explore",
+    sectorsEyebrow: "Sectors",
+    sectorsTitle: "Built for every terrain",
+    sectorsText: "Equipment and services matched to your operating environment.",
+    catalogEyebrow: "Catalog",
+    catalogTitle: "Available machines",
+    catalogText: "Filter by category or search a model to prepare your quote.",
+    refs: "reference",
+    refsPlural: "references",
+    ctaTitle: "A machine, parts or",
+    ctaAccent: "export",
+    ctaSub: "Share the model, timeline and urgency — clear, actionable reply.",
+    ctaButton: "Contact the team",
+  },
   machines: {
-    title: "Serial Expertise",
+    title: "Available machines",
     subtitle: "Heavy equipment catalog",
     searchPlaceholder: "Search for a machine...",
     filterByCategory: "Filter by category",
-    allCategories: "All categories",
+    allCategories: "All",
     noResults: "No machines found",
+    techSheet: "Spec sheet",
+    quoteDirect: "Request a quote",
     specs: {
       power: "Power",
       weight: "Weight",
       engine: "Engine",
       bucket: "Bucket",
+      depth: "Dig depth",
     },
   },
-
-  // Services
   services: {
     parts: "Spare parts",
     logistics: "Logistics & Export",
     afterSales: "After-sales service",
     training: "Training",
   },
-
-  // Contact
   contact: {
     heading: "Get in touch",
     description: "Fill out the form to send us your request",
@@ -99,8 +171,20 @@ export const en = {
     success: "Message sent successfully",
     error: "Error sending message",
   },
-
-  // Common
+  footer: {
+    catalog: "Catalog",
+    services: "Services",
+    machines: "Machines",
+    pieces: "Spare parts",
+    tools: "Tools",
+    sav: "After-sales",
+    logistics: "Export logistics",
+    articles: "Articles",
+    about: "About",
+    legal: "Legal notice",
+    privacy: "Privacy",
+    rights: "All rights reserved.",
+  },
   common: {
     readMore: "Read more",
     learnMore: "Discover",
@@ -123,7 +207,7 @@ export const defaultLanguage: Language = "fr";
 export const supportedLanguages: Language[] = ["fr", "en"];
 
 export function getTranslation(
-  lang: Language | string = defaultLanguage
+  lang: Language | string = defaultLanguage,
 ): Translation {
   return translations[(lang as Language) || defaultLanguage] || translations.fr;
 }

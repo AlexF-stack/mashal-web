@@ -18,26 +18,28 @@ import {
   Globe,
 } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { cn } from "@/lib/utils";
 import { useProject } from "@/context/ProjectContext";
+import { useI18n } from "@/lib/i18n-context";
 import ProjectDrawer from "./ProjectDrawer";
-import LanguageSwitcher from "./LanguageSwitcher";
-
-const desktopLinks = [
-  { label: "Machines", href: "/machines" },
-  { label: "Pièces", href: "/pieces" },
-  { label: "SAV", href: "/sav" },
-  { label: "Logistique", href: "/logistique" },
-  { label: "Articles", href: "/articles" },
-  { label: "À propos", href: "/a-propos" },
-];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isProjectDrawerOpen, setIsProjectDrawerOpen] = useState(false);
   const { items: projectItems } = useProject();
+  const { t } = useI18n();
   const pathname = usePathname();
+
+  const desktopLinks = [
+    { label: t.nav.machines, href: "/machines" },
+    { label: t.nav.pieces, href: "/pieces" },
+    { label: t.nav.sav, href: "/sav" },
+    { label: t.nav.logistique, href: "/logistique" },
+    { label: t.nav.articles, href: "/articles" },
+    { label: t.nav.aPropos, href: "/a-propos" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -59,8 +61,8 @@ export default function Navbar() {
           className={cn(
             "mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 transition-all duration-400 md:px-5",
             scrolled
-              ? "glass py-2 pr-2 text-foreground"
-              : "bg-black/30 py-2 pr-2 text-white backdrop-blur-md",
+              ? "border border-[color:var(--border)] bg-[color:var(--surface)] py-2 pr-2 text-foreground shadow-[0_12px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl"
+              : "bg-black/35 py-2 pr-2 text-white backdrop-blur-md",
           )}
         >
           <Link href="/" className="flex items-center gap-3">
@@ -99,7 +101,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsProjectDrawerOpen(true)}
               className="relative rounded-full p-2 transition-colors hover:text-primary"
-              aria-label="Voir mon projet"
+              aria-label={t.nav.project}
             >
               <FolderOpen className="h-5 w-5" />
               {projectItems.length > 0 && (
@@ -109,15 +111,16 @@ export default function Navbar() {
               )}
             </button>
 
-            <div className="hidden md:block">
-              <ThemeToggle />
+            <div className="hidden items-center gap-2 md:flex">
+              <LanguageSwitcher variant={scrolled ? "light" : "dark"} />
+              <ThemeToggle variant={scrolled ? "light" : "dark"} />
             </div>
 
             <Link
               href="/sav?type=devis"
               className="rounded-full bg-primary px-4 py-2 text-xs font-bold tracking-wide text-background transition-opacity hover:opacity-90 md:px-5"
             >
-              Devis
+              {t.nav.devis}
             </Link>
 
             <button
@@ -149,11 +152,11 @@ export default function Navbar() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex h-full flex-col">
-                <div className="flex items-center justify-between border-b border-white/10 p-6">
+                <div className="flex items-center justify-between border-b border-[color:var(--border)] p-6">
                   <span className="text-xl font-bold tracking-widest">MASHAL</span>
                   <button
                     onClick={() => setMobileOpen(false)}
-                    className="rounded-full bg-white/5 p-2"
+                    className="rounded-full bg-foreground/5 p-2"
                     aria-label="Fermer le menu"
                   >
                     <X className="h-6 w-6" />
@@ -163,19 +166,19 @@ export default function Navbar() {
                 <div className="flex-1 overflow-y-auto p-6">
                   <div className="grid gap-1">
                     {[
-                      { label: "Machines", href: "/machines", icon: Cog },
-                      { label: "Pièces", href: "/pieces", icon: ShieldCheck },
-                      { label: "SAV", href: "/sav", icon: Settings },
-                      { label: "Logistique", href: "/logistique", icon: Globe },
-                      { label: "Articles", href: "/articles", icon: MessageSquare },
-                      { label: "À propos", href: "/a-propos", icon: User },
-                      { label: "Outils", href: "/outils", icon: Calculator },
+                      { label: t.nav.machines, href: "/machines", icon: Cog },
+                      { label: t.nav.pieces, href: "/pieces", icon: ShieldCheck },
+                      { label: t.nav.sav, href: "/sav", icon: Settings },
+                      { label: t.nav.logistique, href: "/logistique", icon: Globe },
+                      { label: t.nav.articles, href: "/articles", icon: MessageSquare },
+                      { label: t.nav.aPropos, href: "/a-propos", icon: User },
+                      { label: t.nav.outils, href: "/outils", icon: Calculator },
                     ].map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
                         onClick={() => setMobileOpen(false)}
-                        className="flex items-center gap-4 rounded-2xl p-4 transition-colors hover:bg-white/5"
+                        className="flex items-center gap-4 rounded-2xl p-4 transition-colors hover:bg-foreground/5"
                       >
                         <link.icon className="h-5 w-5 text-primary" />
                         <span className="font-semibold tracking-wide">{link.label}</span>
@@ -184,19 +187,25 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                <div className="border-t border-white/10 p-6">
-                  <div className="mb-5 flex items-center justify-between">
+                <div className="border-t border-[color:var(--border)] p-6">
+                  <div className="mb-5 flex items-center justify-between gap-3">
                     <p className="text-xs font-semibold uppercase tracking-widest text-foreground/45">
-                      Langue
+                      {t.nav.language}
                     </p>
-                    <LanguageSwitcher />
+                    <LanguageSwitcher variant="light" />
+                  </div>
+                  <div className="mb-5 flex items-center justify-between gap-3">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-foreground/45">
+                      Theme
+                    </p>
+                    <ThemeToggle variant="light" />
                   </div>
                   <Link
                     href="/sav?type=devis"
                     onClick={() => setMobileOpen(false)}
                     className="flex w-full items-center justify-center rounded-full bg-primary px-6 py-3.5 text-sm font-bold text-background"
                   >
-                    Demander un devis
+                    {t.home.ctaQuote}
                   </Link>
                 </div>
               </div>
