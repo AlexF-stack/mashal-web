@@ -64,9 +64,12 @@ export default function MachineCard({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
 
-            <div className="absolute top-4 left-4">
-              <span className="rounded-full border border-white/20 bg-black/45 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-md">
+            <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+              <span className="rounded-md border border-white/20 bg-black/50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-md">
                 {categoryName}
+              </span>
+              <span className="rounded-md border border-primary/40 bg-primary/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-background">
+                {t.home.availability}
               </span>
             </div>
 
@@ -84,7 +87,7 @@ export default function MachineCard({
             <h3 className="mb-3 text-xl leading-tight transition-colors duration-300 group-hover:text-primary md:text-2xl">
               {name}
             </h3>
-            <p className="mb-5 line-clamp-3 text-sm leading-relaxed text-foreground/65">
+            <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-foreground/65">
               {getMachineSummary(machine, language)}
             </p>
 

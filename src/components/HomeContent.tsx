@@ -8,6 +8,8 @@ import SectorsSection from "@/components/SectorsSection";
 import FounderSection from "@/components/FounderSection";
 import Hero from "@/components/Hero";
 import FeaturedMachines from "@/components/FeaturedMachines";
+import CategoryFinder from "@/components/CategoryFinder";
+import TrustStrip from "@/components/TrustStrip";
 import { Reveal } from "@/components/motion/Reveal";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 import { siteVisuals } from "@/lib/site-content";
@@ -40,11 +42,13 @@ export default function HomeContent() {
   return (
     <>
       <Hero />
+      <CategoryFinder />
+      <FeaturedMachines />
+      <TrustStrip />
 
-      {/* Services — split layout (pas une grille de cards) */}
-      <section className="border-b border-[color:var(--border)] py-16 md:py-22">
+      <section className="border-b border-[color:var(--border)] py-16 md:py-20">
         <div className="container mx-auto px-6">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
             <Reveal>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-primary">
                 {t.home.servicesEyebrow}
@@ -88,12 +92,7 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Secteurs — bento asymétrique */}
       <SectorsSection />
-
-      {/* Catalogue — sélection courte */}
-      <FeaturedMachines />
-
       <FounderSection />
       <ArticleHighlights />
 

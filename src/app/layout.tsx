@@ -8,6 +8,7 @@ import { organizationJsonLd } from "@/lib/json-ld";
 import { I18nProvider } from "@/lib/i18n-context";
 import { ProjectProvider } from "@/context/ProjectContext";
 import AIChatAssistant from "@/components/AIChatAssistant";
+import DealerContactBar from "@/components/DealerContactBar";
 
 const siteUrl = company.siteUrl;
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -123,8 +124,9 @@ export default function RootLayout({
               </>
             )}
             <Navbar />
-            <main>{children}</main>
+            <main className="pb-20 md:pb-0">{children}</main>
             <Footer />
+            <DealerContactBar />
             <AIChatAssistant />
           </ProjectProvider>
         </I18nProvider>

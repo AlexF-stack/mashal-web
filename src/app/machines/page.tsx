@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import MachineCard from "@/components/MachineCard";
 import machinesData from "@/machines_master.json";
@@ -9,9 +10,11 @@ import { useI18n } from "@/lib/i18n-context";
 import { categoryLabel } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { siteVisuals } from "@/lib/site-content";
+import { Suspense } from "react";
 
-export default function MachinesPage() {
+function MachinesCatalog() {
   const { t } = useI18n();
+  const searchParams = useSearchParams();
   const categories = useMemo(
     () => [
       "Tous",
@@ -22,6 +25,13 @@ export default function MachinesPage() {
     [],
   );
   const [activeCategory, setActiveCategory] = useState("Tous");
+
+  useEffect(() => {
+    const cat = searchParams.get("cat");
+    if (cat && categories.includes(cat)) {
+      setActiveCategory(cat);
+    }
+  }, [searchParams, categories]);
 
   const filteredMachines = useMemo(
     () =>
@@ -89,5 +99,13 @@ export default function MachinesPage() {
         </div>
       </section>
     </>
+  );
+}
+
+export default function MachinesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-[60vh] bg-background" />}>
+      <MachinesCatalog />
+    </Suspense>
   );
 }
