@@ -3,135 +3,55 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
-      <div className="absolute inset-0 z-0 bg-[#0A0F1C]">
+    <section className="relative flex min-h-[100svh] items-end overflow-hidden pb-16 pt-28 md:items-center md:pb-24 md:pt-32">
+      <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-industrial.webp"
-          alt=""
+          src="/visuals/excavator-worksite.jpg"
+          alt="Engin de chantier Mashal Equipment"
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-35"
+          className="object-cover object-center"
         />
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(212,175,55,0.1) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(212,175,55,0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: "4rem 4rem",
-          }}
-        />
-        <div className="absolute top-0 left-[20%] h-[40%] w-[40%] rounded-full bg-primary/10 blur-[120px]" />
-        <div className="absolute right-[10%] bottom-0 h-[50%] w-[30%] rounded-full bg-primary/5 blur-[100px]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/50 to-[#0A0F1C]/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1C] via-[#0A0F1C]/55 to-transparent" />
+        <div className="absolute inset-0 bg-[#0B1220]/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220] via-[#0B1220]/35 to-[#0B1220]/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1220]/80 via-[#0B1220]/25 to-transparent" />
       </div>
 
       <div className="container relative z-10 mx-auto px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_400px]">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/20 px-4 py-1.5 glass">
-                <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
-                <span className="text-xs font-bold uppercase tracking-widest text-primary">
-                  Solutions industrielles & minières
-                </span>
-              </div>
-
-              <h1 className="mb-8 text-3xl font-bold leading-[0.9] text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
-                Mashal <br />
-                <span className="text-primary">Equipment</span>
-              </h1>
-
-              <p className="mb-12 max-w-2xl text-lg leading-relaxed text-white/70 md:text-xl">
-                Équipements lourds, pièces détachées, support technique et logistique
-                export pour sécuriser la continuité d&apos;exploitation de vos chantiers.
-              </p>
-
-              <div className="flex flex-wrap gap-6">
-                <Link href="/sav?type=devis" className="btn-premium btn-gold group">
-                  Demander un devis
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-                <Link
-                  href="/machines"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-4 font-bold text-white backdrop-blur-md transition-all hover:bg-white/10"
-                >
-                  <Globe className="h-5 w-5 text-primary" />
-                  Voir le catalogue
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="hidden lg:block"
-          >
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10">
-              <div className="relative aspect-[4/5]">
-                <Image
-                  src="/visuals/wheel-loader.jpg"
-                  alt="Chargeuse Mashal Equipment"
-                  fill
-                  sizes="400px"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-transparent to-transparent" />
-              </div>
-              <div className="absolute inset-x-0 bottom-0 space-y-3 p-6">
-                <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/40 p-4 backdrop-blur-md">
-                  <ShieldCheck className="h-5 w-5 text-primary" />
-                  <div>
-                    <p className="text-sm font-bold text-white">Disponibilité & confiance</p>
-                    <p className="text-[10px] uppercase tracking-widest text-white/45">
-                      Pièces · SAV · Export
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/40 p-4 backdrop-blur-md">
-                  <Zap className="h-5 w-5 text-primary" />
-                  <div>
-                    <p className="text-sm font-bold text-white">Support cycle de vie</p>
-                    <p className="text-[10px] uppercase tracking-widest text-white/45">
-                      Maintenance & formation
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="mt-24 grid grid-cols-2 gap-8 border-t border-white/10 pt-12 md:grid-cols-4"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-3xl"
         >
-          {[
-            { label: "Produits catalogue", value: "40+" },
-            { label: "Secteurs couverts", value: "6" },
-            { label: "Services support", value: "4" },
-            { label: "Expertise métier", value: "360°" },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <p className="mb-1 text-3xl font-bold text-white">{stat.value}</p>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">{stat.label}</p>
-            </div>
-          ))}
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-primary">
+            Mashal Equipment
+          </p>
+          <h1 className="mb-6 text-4xl font-bold leading-[0.95] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            Engins, pièces et support
+            <span className="block text-primary">pour chantiers exigeants</span>
+          </h1>
+          <p className="mb-10 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
+            Catalogue machines, disponibilité des pièces, SAV et logistique export —
+            un interlocuteur pour tout le cycle de vie.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/machines" className="btn-premium btn-gold">
+              Voir le catalogue
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/sav?type=devis"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-primary hover:text-primary"
+            >
+              Demander un devis
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

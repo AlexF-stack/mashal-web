@@ -25,7 +25,7 @@ export default function PageHero({
   backgroundImage = "/images/hero-industrial.webp",
 }: PageHeroProps) {
   return (
-    <section className="relative flex min-h-[68vh] items-center overflow-hidden pt-36 pb-20 md:pt-40 md:pb-24">
+    <section className="relative flex min-h-[58vh] items-end overflow-hidden pb-16 pt-36 md:min-h-[64vh] md:items-center md:pb-20 md:pt-40">
       <div className="absolute inset-0 z-0 bg-[#0B1220]">
         <Image
           src={backgroundImage}
@@ -33,20 +33,18 @@ export default function PageHero({
           fill
           priority
           sizes="100vw"
-          className="object-cover brightness-[0.42]"
+          className="object-cover brightness-[0.55]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220] via-[#0B1220]/55 to-[#0B1220]/25" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1220]/90 via-[#0B1220]/35 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-[#0B1220]/45 to-[#0B1220]/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1220]/85 via-[#0B1220]/30 to-transparent" />
       </div>
 
       <div className="container relative z-10 mx-auto px-6">
-        <div className="max-w-4xl">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-primary backdrop-blur-md">
-            <span className="h-2 w-2 rounded-full bg-primary" />
+        <div className="max-w-3xl">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-primary">
             {eyebrow}
-          </div>
-          <h1 className="mb-7 text-4xl leading-[0.92] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+          </p>
+          <h1 className="mb-5 text-4xl leading-[0.95] text-white sm:text-5xl md:text-6xl lg:text-7xl">
             {title}
             {highlight ? (
               <>
@@ -55,8 +53,10 @@ export default function PageHero({
               </>
             ) : null}
           </h1>
-          <p className="mb-10 max-w-2xl text-lg leading-relaxed text-white/80">{description}</p>
-          <div className="flex flex-wrap gap-4">
+          <p className="mb-8 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
+            {description}
+          </p>
+          <div className="flex flex-wrap gap-3">
             {primaryHref && primaryLabel && (
               <Link href={primaryHref} className="btn-premium btn-gold">
                 {primaryLabel}
@@ -65,7 +65,7 @@ export default function PageHero({
             {secondaryHref && secondaryLabel && (
               <Link
                 href={secondaryHref}
-                className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-7 py-4 text-sm font-bold text-white backdrop-blur-md transition-colors hover:border-primary hover:text-primary"
+                className="inline-flex items-center rounded-full border border-white/25 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-primary hover:text-primary"
               >
                 {secondaryLabel}
               </Link>

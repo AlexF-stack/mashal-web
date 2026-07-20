@@ -49,7 +49,7 @@ export default function MachineCard({ machine, index }: { machine: Machine; inde
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="group overflow-hidden rounded-[2rem] border border-white/10 bg-[#243044] text-white shadow-[0_18px_54px_rgba(15,23,42,0.2)] transition-all duration-500 hover:border-primary/50 hover:shadow-[0_20px_60px_rgba(212,175,55,0.12)]"
+      className="group overflow-hidden rounded-3xl border border-white/10 bg-[#243044] text-white transition-colors duration-300 hover:border-primary/40"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         <Image
@@ -176,7 +176,7 @@ export default function MachineCard({ machine, index }: { machine: Machine; inde
           </div>
           <Link
             href="/sav"
-            className="w-full rounded-xl bg-primary py-3 text-[11px] font-bold uppercase tracking-wider text-background transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] text-center"
+            className="w-full rounded-xl bg-primary py-3 text-center text-[11px] font-bold uppercase tracking-wider text-background transition-opacity hover:opacity-90"
           >
             Demande de devis direct
           </Link>

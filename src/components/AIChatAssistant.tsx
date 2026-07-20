@@ -93,7 +93,7 @@ export default function AIChatAssistant() {
             animate={{ scale: 1, rotate: 0 }}
             exit={{ scale: 0, rotate: 20 }}
             onClick={() => setIsOpen(true)}
-            className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-[#0F172A] shadow-[0_15px_45px_rgba(212,175,55,0.5)] transition-transform hover:scale-110 active:scale-95 md:h-16 md:w-16"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-[#0F172A] shadow-lg transition-opacity hover:opacity-90 active:scale-95 md:h-14 md:w-14"
           >
             <Bot className="h-7 w-7 md:h-8 md:w-8" />
           </motion.button>
