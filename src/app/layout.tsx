@@ -3,8 +3,13 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import Script from "next/script";
+import { company } from "@/lib/company";
+import { organizationJsonLd } from "@/lib/json-ld";
+import { I18nProvider } from "@/lib/i18n-context";
+import { ProjectProvider } from "@/context/ProjectContext";
+import AIChatAssistant from "@/components/AIChatAssistant";
 
-const siteUrl = "https://mashal.equipment";
+const siteUrl = company.siteUrl;
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export const viewport: Viewport = {
@@ -28,6 +33,8 @@ export const metadata: Metadata = {
     "export Afrique",
     "SAV technique",
     "maintenance préventive",
+    "Mashal Equipment",
+    "Cotonou",
   ],
   authors: [{ name: "Mashal Equipment" }],
   openGraph: {
@@ -69,22 +76,27 @@ export const metadata: Metadata = {
   },
 };
 
-import { I18nProvider } from "@/lib/i18n-context";
-import { ProjectProvider } from "@/context/ProjectContext";
-import AIChatAssistant from "@/components/AIChatAssistant";
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = organizationJsonLd();
+
   return (
     <html lang="fr" className="scroll-smooth">
       <head>
         <link rel="manifest" href="/manifest.json" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();`,
@@ -116,18 +128,9 @@ export default function RootLayout({
             <AIChatAssistant />
           </ProjectProvider>
         </I18nProvider>
-        <Script id="register-sw" strategy="afterInteractive">
-          {`
-            if ('serviceWorker' in navigator) {
-              window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js');
-              });
-            }
-          `}
-        </Script>
-        <Script 
-          type="module" 
-          src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js" 
+        <Script
+          type="module"
+          src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
           strategy="afterInteractive"
         />
       </body>

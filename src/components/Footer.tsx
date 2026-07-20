@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { company, companyLinks } from "@/lib/company";
 
 const navColumns = [
@@ -46,6 +46,7 @@ export default function Footer() {
               {company.tagline}. Accompagnement commercial, technique et logistique pour
               vos projets en Afrique et à l&apos;international.
             </p>
+            <p className="mt-4 text-xs text-white/35">{company.founders}</p>
           </div>
 
           {navColumns.map((column) => (
@@ -81,6 +82,17 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex gap-3">
+                <MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <a
+                  href={companyLinks.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-primary"
+                >
+                  WhatsApp
+                </a>
+              </li>
+              <li className="flex gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 <a href={companyLinks.email} className="transition-colors hover:text-primary">
                   {company.email}
@@ -88,9 +100,19 @@ export default function Footer() {
               </li>
               <li className="text-xs text-white/40">{company.hours}</li>
             </ul>
-            <Link href="/sav" className="btn-premium btn-gold mt-6 px-5 py-2.5 text-xs">
-              Demander un devis
-            </Link>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/sav?type=devis" className="btn-premium btn-gold px-5 py-2.5 text-xs">
+                Demander un devis
+              </Link>
+              <a
+                href={companyLinks.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full border border-white/20 px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors hover:border-primary hover:text-primary"
+              >
+                WhatsApp
+              </a>
+            </div>
           </div>
         </div>
 
