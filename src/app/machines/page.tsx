@@ -5,10 +5,20 @@ import PageHero from "@/components/PageHero";
 import MachineCard from "@/components/MachineCard";
 import machinesData from "@/machines_master.json";
 import { Machine } from "@/types/machine";
+import { useI18n } from "@/lib/i18n-context";
+import { categoryLabel } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
+import { siteVisuals } from "@/lib/site-content";
 
 export default function MachinesPage() {
+  const { t } = useI18n();
   const categories = useMemo(
-    () => ["Tous", ...Array.from(new Set((machinesData as Machine[]).map((machine) => machine.category)))],
+    () => [
+      "Tous",
+      ...Array.from(
+        new Set((machinesData as Machine[]).map((machine) => machine.category)),
+      ),
+    ],
     [],
   );
   const [activeCategory, setActiveCategory] = useState("Tous");
@@ -16,59 +26,63 @@ export default function MachinesPage() {
   const filteredMachines = useMemo(
     () =>
       activeCategory === "Tous"
-        ? machinesData
-        : (machinesData as Machine[]).filter((machine) => machine.category === activeCategory),
+        ? (machinesData as Machine[])
+        : (machinesData as Machine[]).filter(
+            (machine) => machine.category === activeCategory,
+          ),
     [activeCategory],
   );
 
   return (
     <>
       <PageHero
-        eyebrow="Catalogue"
-        title="Notre parc"
-        highlight="d'engins"
-        description="Découvrez notre sélection d'équipements de construction et travaux publics, rigoureusement sélectionnés pour leur fiabilité et leurs performances."
+        eyebrow={t.pages.machines.eyebrow}
+        title={t.pages.machines.title}
+        highlight={t.pages.machines.highlight}
+        description={t.pages.machines.description}
         primaryHref="/sav?type=devis"
-        primaryLabel="Demande de devis"
+        primaryLabel={t.pages.machines.primary}
         secondaryHref="/pieces"
-        secondaryLabel="Voir les pièces"
-        backgroundImage="/visuals/excavator-worksite.jpg"
+        secondaryLabel={t.pages.machines.secondary}
+        backgroundImage={siteVisuals.loader}
       />
 
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-6">
-          <div className="mb-10 flex flex-wrap items-center justify-between gap-4">
+          <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-primary">Filtrer</p>
-              <h2 className="text-3xl leading-[0.9] sm:text-4xl md:text-5xl">
-                Machines par <span className="text-primary">catégorie</span>
-              </h2>
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-primary">
+                {t.pages.machines.filter}
+              </p>
+              <h2 className="text-3xl md:text-4xl">{t.pages.machines.byCategory}</h2>
             </div>
-            <div className="flex flex-wrap gap-3">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={
-                    activeCategory === category
-                      ? "rounded-full bg-primary px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-background shadow-lg shadow-primary/20"
-                      : "rounded-full border border-white/10 bg-white/5 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-foreground/72 hover:bg-white/10 hover:text-foreground dark:text-white/72 dark:hover:text-white"
-                  }
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="mb-16 rounded-[2rem] border border-white/8 bg-white/60 p-8 shadow-[0_22px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:bg-white/4">
-            <p className="text-sm text-foreground/70">
-              {filteredMachines.length} machine{filteredMachines.length > 1 ? "s" : ""} trouvée{filteredMachines.length > 1 ? "s" : ""}
+            <p className="text-sm text-foreground/55">
+              {filteredMachines.length}{" "}
+              {filteredMachines.length > 1 ? t.home.refsPlural : t.home.refs}
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {(filteredMachines as Machine[]).map((machine, index) => (
+          <div className="mb-8 flex flex-wrap gap-2">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={cn(
+                  "rounded-full px-4 py-2 text-xs font-semibold transition-colors",
+                  activeCategory === category
+                    ? "bg-primary text-background"
+                    : "border border-[color:var(--border)] text-foreground/65 hover:border-primary/40",
+                )}
+              >
+                {category === "Tous"
+                  ? t.machines.allCategories
+                  : categoryLabel(t, category)}
+              </button>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            {filteredMachines.map((machine, index) => (
               <MachineCard key={machine.id} machine={machine} index={index} />
             ))}
           </div>

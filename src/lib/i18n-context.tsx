@@ -13,22 +13,23 @@ interface I18nContextType {
   language: Language;
   t: Translation;
   setLanguage: (lang: Language) => void;
+  ready: boolean;
 }
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
-function readInitialLanguage(): Language {
-  if (typeof window === "undefined") return defaultLanguage;
-  const stored = window.localStorage.getItem("language");
-  if (stored && supportedLanguages.includes(stored as Language)) {
-    return stored as Language;
-  }
-  // Marque francophone (Bénin) : FR par défaut, EN uniquement via switcher
-  return defaultLanguage;
-}
-
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(readInitialLanguage);
+  // Toujours FR au premier render (SSR + hydratation) pour éviter le mismatch
+  const [language, setLanguageState] = useState<Language>(defaultLanguage);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const stored = window.localStorage.getItem("language");
+    if (stored && supportedLanguages.includes(stored as Language)) {
+      setLanguageState(stored as Language);
+    }
+    setReady(true);
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = language;
@@ -42,7 +43,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const t = getTranslation(language);
 
   return (
-    <I18nContext.Provider value={{ language, t, setLanguage }}>
+    <I18nContext.Provider value={{ language, t, setLanguage, ready }}>
       {children}
     </I18nContext.Provider>
   );

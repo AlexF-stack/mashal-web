@@ -19,7 +19,7 @@ export default function LegalMentionsPage() {
         description="Informations éditeur et conditions d'utilisation du site Mashal Equipment."
         primaryHref="/"
         primaryLabel="Retour à l'accueil"
-        backgroundImage={siteVisuals.loader}
+        backgroundImage={siteVisuals.worksite}
       />
       <section className="py-20">
         <div className="container mx-auto max-w-3xl px-6">

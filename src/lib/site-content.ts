@@ -105,19 +105,16 @@ export const articleHighlights = [
 
 export const partsFamilies = [
   {
-    title: "Moteur & filtration",
-    text: "Filtres à huile, à carburant, à air, injecteurs, courroies, kits de maintenance et consommables compatibles avec les principales motorisations du parc.",
-    image: "/visuals/parts-stock.jpg",
-  },
-  {
-    title: "Hydraulique & transmission",
-    text: "Flexibles, pompes, joints, vérins, distributeurs, raccords et composants critiques pour conserver puissance, précision et sécurité.",
+    key: "engine" as const,
     image: "/visuals/sav-maintenance.jpg",
   },
   {
-    title: "Train roulant & usure",
-    text: "Dents de godet, lames, rouleaux, galets, chaînes, patins et éléments soumis à forte abrasion pour les environnements intensifs.",
-    image: "/visuals/excavator-worksite.jpg",
+    key: "hydraulic" as const,
+    image: "/visuals/parts-stock.jpg",
+  },
+  {
+    key: "undercarriage" as const,
+    image: "/images/machines/pelle-miniere-33t.webp",
   },
 ];
 
@@ -181,41 +178,17 @@ export const stockParts = [
 ];
 
 export const serviceOffers = [
-  {
-    title: "Maintenance planifiée",
-    text: "Programmes d'entretien calibrés selon les heures machine, les conditions d'exploitation et les priorités de disponibilité client.",
-  },
-  {
-    title: "Diagnostic & intervention",
-    text: "Appui technique pour l'analyse des pannes, la remise en route rapide et la préparation des remplacements critiques.",
-  },
-  {
-    title: "Formation opérateurs",
-    text: "Montée en compétence des équipes pour une utilisation plus sûre, plus économique et plus respectueuse du matériel.",
-  },
-  {
-    title: "Suivi cycle de vie",
-    text: "Approche globale associant pièces, service, historique de maintenance et recommandations d'amélioration continue.",
-  },
+  { key: "planned" as const },
+  { key: "diagnostic" as const },
+  { key: "training" as const },
+  { key: "lifecycle" as const },
 ];
 
 export const logisticsSteps = [
-  {
-    title: "Préparation technique",
-    text: "Inspection avant expédition, sécurisation des accessoires, documentation photo et préparation des unités pour le transport.",
-  },
-  {
-    title: "Montage documentaire",
-    text: "Coordination des documents commerciaux, techniques et douaniers nécessaires à une exportation maîtrisée.",
-  },
-  {
-    title: "Transport & coordination",
-    text: "Choix du mode d'acheminement, suivi des opérations portuaires et pilotage des correspondances jusqu'au point de livraison.",
-  },
-  {
-    title: "Réception & mise en service",
-    text: "Accompagnement à la réception, contrôle de conformité et transmission des recommandations de redémarrage ou d'exploitation.",
-  },
+  { key: "prep" as const },
+  { key: "docs" as const },
+  { key: "transport" as const },
+  { key: "reception" as const },
 ];
 
 export const siteVisuals = {
@@ -226,6 +199,9 @@ export const siteVisuals = {
   sav: "/visuals/sav-maintenance.jpg",
   logistics: "/visuals/logistics-port.jpg",
   loader: "/visuals/wheel-loader.jpg",
-  road: "/visuals/road.webp",
+  road: "/images/machines/niveleuse-160hp.webp",
+  agriculture: "/images/machines/tracteur-agricole-150hp.webp",
+  waste: "/images/machines/compacteur-decharge.webp",
+  warehouse: "/images/machines/chariot-elevateur-5t.webp",
   founders: "/fondateurs-dossou.jpeg",
 } as const;

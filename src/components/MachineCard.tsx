@@ -13,6 +13,7 @@ import { Machine } from "@/types/machine";
 import { TiltCard } from "@/components/motion/TiltCard";
 import { Reveal } from "@/components/motion/Reveal";
 import { useI18n } from "@/lib/i18n-context";
+import { categoryLabel } from "@/lib/i18n";
 
 export default function MachineCard({
   machine,
@@ -25,6 +26,7 @@ export default function MachineCard({
   const { t, language } = useI18n();
   const inProject = isInProject(machine.id);
   const [imgSrc, setImgSrc] = useState(() => getMachineImage(machine.id));
+  const categoryName = categoryLabel(t, machine.category);
 
   const handleImageError = () => {
     setImgSrc("/images/machines/default-machine.webp");
@@ -53,7 +55,7 @@ export default function MachineCard({
           <div className="relative aspect-[16/10] overflow-hidden bg-slate-200">
             <Image
               src={imgSrc}
-              alt={`${name} - ${machine.category} - Mashal Equipment`}
+              alt={`${name} - ${categoryName} - Mashal Equipment`}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               loading="lazy"
@@ -64,7 +66,7 @@ export default function MachineCard({
 
             <div className="absolute top-4 left-4">
               <span className="rounded-full border border-white/20 bg-black/45 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-md">
-                {machine.category}
+                {categoryName}
               </span>
             </div>
 
@@ -83,7 +85,7 @@ export default function MachineCard({
               {name}
             </h3>
             <p className="mb-5 line-clamp-3 text-sm leading-relaxed text-foreground/65">
-              {getMachineSummary(machine)}
+              {getMachineSummary(machine, language)}
             </p>
 
             <div className="mb-6 grid flex-1 grid-cols-2 gap-4 border-b border-[color:var(--border)] pb-5">

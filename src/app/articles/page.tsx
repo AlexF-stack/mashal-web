@@ -45,7 +45,7 @@ export default function ArticlesPage() {
         primaryLabel="Parler à un expert"
         secondaryHref="/pieces"
         secondaryLabel="Voir les pièces"
-        backgroundImage={siteVisuals.worksite}
+        backgroundImage={siteVisuals.sav}
       />
 
       <section className="py-24">

@@ -196,7 +196,7 @@ export default function Navbar() {
                   </div>
                   <div className="mb-5 flex items-center justify-between gap-3">
                     <p className="text-xs font-semibold uppercase tracking-widest text-foreground/45">
-                      Theme
+                      {t.nav.theme}
                     </p>
                     <ThemeToggle variant="light" />
                   </div>
