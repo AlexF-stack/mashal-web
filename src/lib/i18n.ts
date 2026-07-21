@@ -14,10 +14,11 @@ export const fr = {
     theme: "Thème",
   },
   home: {
-    brand: "Mashal Equipment",
-    headline: "Gardez vos chantiers",
-    headlineAccent: "en production",
-    sub: "Machines, pièces critiques, SAV et export — un interlocuteur pour sécuriser l'uptime de votre parc.",
+    brand: "Mashal Equipment · HERNA HOLDING",
+    headline: "Des machines et des hommes",
+    headlineAccent: "en qui vous pouvez avoir confiance",
+    sub: "Formation, consultation technique, SAV, pièces de rechange et gestion de chantiers BTP, miniers et hydrauliques — au-delà de la simple vente d'engins.",
+    ctaServices: "Nos expertises",
     ctaCatalog: "Parcourir le parc",
     ctaQuote: "Demander un devis",
     findEyebrow: "Inventaire",
@@ -31,9 +32,9 @@ export const fr = {
     call: "Appeler",
     whatsapp: "WhatsApp",
     availability: "Sur demande",
-    servicesEyebrow: "Uptime",
-    servicesTitle: "Ce qui garde le chantier en marche",
-    servicesLead: "Pièces, atelier et logistique — le même niveau d'exigence que les grands dealers.",
+    servicesEyebrow: "Expertises",
+    servicesTitle: "Au-delà de la vente de machines",
+    servicesLead: "Mashal accompagne vos chantiers sur tout le cycle de vie — de la formation à la gestion opérationnelle.",
     partsTitle: "Pièces détachées",
     partsText: "Références critiques et disponibilité pour réduire les immobilisations.",
     savTitle: "Service après-vente",
@@ -62,6 +63,43 @@ export const fr = {
     ctaAccent: "export",
     ctaSub: "Modèle, délai, urgence — réponse claire et actionnable.",
     ctaButton: "Contacter l'équipe",
+  },
+  coreServices: {
+    eyebrow: "Nos expertises",
+    title: "Un partenaire technique complet",
+    lead: "Filiale HERNA HOLDING — Mashal couvre l'ensemble des besoins terrain, pas seulement la fourniture d'engins.",
+    items: [
+      {
+        title: "Formation",
+        text: "Montée en compétence des opérateurs et encadrement sécurisé sur vos équipements.",
+        href: "/sav#formation",
+      },
+      {
+        title: "Consultation & assistance technique",
+        text: "Diagnostic, conseil et accompagnement pour optimiser vos parcs et vos chantiers.",
+        href: "/sav",
+      },
+      {
+        title: "Service après-vente",
+        text: "Maintenance préventive et corrective, interventions sur site et remise en route.",
+        href: "/sav",
+      },
+      {
+        title: "Pièces de rechange",
+        text: "Pièces d'origine, accessoires, lubrifiants et disponibilité pour limiter les arrêts.",
+        href: "/pieces",
+      },
+      {
+        title: "Gestion de chantiers",
+        text: "Pilotage BTP, mines, ouvrages hydrauliques et projets d'infrastructure complexe.",
+        href: "/a-propos#chantiers",
+      },
+      {
+        title: "Vente de machines",
+        text: "Engins lourds sélectionnés pour la fiabilité, avec qualification et devis rapide.",
+        href: "/machines",
+      },
+    ],
   },
   pages: {
     machines: {
@@ -123,12 +161,26 @@ export const fr = {
     },
     about: {
       eyebrow: "À propos",
-      title: "Une entreprise bâtie sur",
-      highlight: "la confiance",
+      title: "Le flambeau de référence",
+      highlight: "en équipements lourds",
       description:
-        "Direction engagée, proximité terrain et ambition de fiabilité sur tout le cycle de vie des machines.",
+        "Filiale de HERNA HOLDING, Mashal Equipment livre des équipements robustes et un accompagnement durable pour les projets critiques en Afrique et à l'international.",
       primary: "Nous contacter",
       secondary: "Voir les machines",
+      visionEyebrow: "Vision",
+      visionTitle: "Le Flambeau de Référence",
+      visionText:
+        "Devenir la référence en excellence, fiabilité et innovation dans la fourniture d'équipements lourds et l'accompagnement technique en Afrique.",
+      missionEyebrow: "Mission",
+      missionTitle: "Équipements robustes, projets durables",
+      missionText:
+        "Fournir des équipements fiables et un support expert pour les projets les plus exigeants — sécurité, innovation et excellence opérationnelle au cœur de chaque intervention.",
+      valuesEyebrow: "Valeurs",
+      valuesTitle: "Ce qui guide nos équipes",
+      chantiersEyebrow: "Gestion de chantiers",
+      chantiersTitle: "BTP, mines & ouvrages hydrauliques",
+      chantiersText:
+        "De la planification à la mise en service, nous coordonnons engins, pièces, équipes et SAV pour sécuriser vos chantiers les plus complexes.",
     },
     articles: {
       eyebrow: "Articles",
@@ -271,9 +323,14 @@ export const fr = {
       "Ambition : livrer des équipements robustes, un accompagnement durable et une relation de confiance sur tout le cycle de vie.",
     body2:
       "Pièces, assistance technique, formation, logistique internationale et suivi après livraison.",
-    h1: "Vision long terme orientée fiabilité opérationnelle",
-    h2: "Culture du service et de la proximité client",
-    h3: "Pilotage de projets complexes en Afrique et à l'international",
+    h1: "Fiabilité",
+    h1Text: "Des équipements et des hommes en qui vous pouvez avoir confiance, sur chantier comme à l'export.",
+    h2: "Excellence",
+    h2Text: "Exigence technique, qualité de service et respect des délais sur chaque dossier.",
+    h3: "Innovation",
+    h3Text: "Solutions adaptées aux réalités africaines et aux projets d'infrastructure complexe.",
+    h4: "Intégrité",
+    h4Text: "Transparence commerciale, conseil honnête et relation durable avec nos clients.",
   },
   contact: {
     heading: "Contactez-nous",
@@ -300,6 +357,7 @@ export const fr = {
     legal: "Mentions légales",
     privacy: "Confidentialité",
     rights: "Tous droits réservés.",
+    holding: "Filiale de",
   },
   common: {
     readMore: "En savoir plus",
@@ -326,10 +384,11 @@ export const en: typeof fr = {
     theme: "Theme",
   },
   home: {
-    brand: "Mashal Equipment",
-    headline: "Keep your sites",
-    headlineAccent: "running",
-    sub: "Machines, critical parts, support and export — one partner to protect fleet uptime.",
+    brand: "Mashal Equipment · HERNA HOLDING",
+    headline: "Machines and people",
+    headlineAccent: "you can trust",
+    sub: "Training, technical consulting, after-sales, spare parts and site management for construction, mining and hydraulic projects — beyond machine sales alone.",
+    ctaServices: "Our expertise",
     ctaCatalog: "Browse the yard",
     ctaQuote: "Request a quote",
     findEyebrow: "Inventory",
@@ -343,9 +402,9 @@ export const en: typeof fr = {
     call: "Call",
     whatsapp: "WhatsApp",
     availability: "On request",
-    servicesEyebrow: "Uptime",
-    servicesTitle: "What keeps the job moving",
-    servicesLead: "Parts, workshop and logistics — dealer-grade follow-through.",
+    servicesEyebrow: "Expertise",
+    servicesTitle: "Beyond machine sales",
+    servicesLead: "Mashal supports your sites across the full lifecycle — from training to operational management.",
     partsTitle: "Spare parts",
     partsText: "Critical references and availability to cut downtime.",
     savTitle: "After-sales service",
@@ -374,6 +433,43 @@ export const en: typeof fr = {
     ctaAccent: "export",
     ctaSub: "Model, timeline, urgency — clear, actionable reply.",
     ctaButton: "Contact the team",
+  },
+  coreServices: {
+    eyebrow: "Our expertise",
+    title: "A complete technical partner",
+    lead: "HERNA HOLDING subsidiary — Mashal covers full field needs, not just equipment supply.",
+    items: [
+      {
+        title: "Training",
+        text: "Operator upskilling and safe supervision on your equipment.",
+        href: "/sav#formation",
+      },
+      {
+        title: "Consulting & technical assistance",
+        text: "Diagnostics, advice and support to optimize fleets and job sites.",
+        href: "/sav",
+      },
+      {
+        title: "After-sales service",
+        text: "Preventive and corrective maintenance, on-site interventions and restart support.",
+        href: "/sav",
+      },
+      {
+        title: "Spare parts",
+        text: "OEM parts, accessories, lubricants and availability to limit downtime.",
+        href: "/pieces",
+      },
+      {
+        title: "Site management",
+        text: "Construction, mining, hydraulic works and complex infrastructure projects.",
+        href: "/a-propos#chantiers",
+      },
+      {
+        title: "Machine sales",
+        text: "Heavy equipment selected for reliability, with fast qualification and quotes.",
+        href: "/machines",
+      },
+    ],
   },
   pages: {
     machines: {
@@ -435,12 +531,26 @@ export const en: typeof fr = {
     },
     about: {
       eyebrow: "About",
-      title: "A company built on",
-      highlight: "trust",
+      title: "The benchmark torch",
+      highlight: "in heavy equipment",
       description:
-        "Committed leadership, field proximity and reliability across the full machine lifecycle.",
+        "A HERNA HOLDING subsidiary, Mashal Equipment delivers robust equipment and lasting support for critical projects across Africa and internationally.",
       primary: "Contact us",
       secondary: "View machines",
+      visionEyebrow: "Vision",
+      visionTitle: "The Benchmark Torch",
+      visionText:
+        "Become the reference for excellence, reliability and innovation in heavy equipment supply and technical support across Africa.",
+      missionEyebrow: "Mission",
+      missionTitle: "Robust equipment, lasting projects",
+      missionText:
+        "Provide reliable equipment and expert support for the most demanding projects — safety, innovation and operational excellence at the heart of every engagement.",
+      valuesEyebrow: "Values",
+      valuesTitle: "What guides our teams",
+      chantiersEyebrow: "Site management",
+      chantiersTitle: "Construction, mining & hydraulic works",
+      chantiersText:
+        "From planning to commissioning, we coordinate equipment, parts, teams and after-sales to secure your most complex sites.",
     },
     articles: {
       eyebrow: "Articles",
@@ -582,9 +692,14 @@ export const en: typeof fr = {
       "Ambition: deliver robust equipment, lasting support and trust across the full lifecycle.",
     body2:
       "Parts, technical assistance, training, international logistics and post-delivery follow-up.",
-    h1: "Long-term focus on operational reliability",
-    h2: "Service culture and customer proximity",
-    h3: "Complex project delivery in Africa and internationally",
+    h1: "Reliability",
+    h1Text: "Equipment and people you can trust — on site and for export.",
+    h2: "Excellence",
+    h2Text: "Technical rigor, service quality and on-time delivery on every file.",
+    h3: "Innovation",
+    h3Text: "Solutions adapted to African realities and complex infrastructure projects.",
+    h4: "Integrity",
+    h4Text: "Transparent commercial advice and long-term relationships with clients.",
   },
   contact: {
     heading: "Get in touch",
@@ -611,6 +726,7 @@ export const en: typeof fr = {
     legal: "Legal notice",
     privacy: "Privacy",
     rights: "All rights reserved.",
+    holding: "Subsidiary of",
   },
   common: {
     readMore: "Read more",

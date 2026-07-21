@@ -74,13 +74,19 @@ export default function Hero() {
             transition={{ duration: 0.75, delay: 0.42, ease }}
             className="flex flex-wrap items-center gap-3"
           >
-            <MagneticButton href="/machines" className="btn-premium btn-gold">
-              {t.home.ctaCatalog}
+            <MagneticButton href="#services" className="btn-premium btn-gold">
+              {t.home.ctaServices}
               <ArrowRight className="h-4 w-4" />
             </MagneticButton>
             <MagneticButton
-              href="/sav?type=devis"
+              href="/machines"
               className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-primary hover:text-primary"
+            >
+              {t.home.ctaCatalog}
+            </MagneticButton>
+            <MagneticButton
+              href="/sav?type=devis"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-sm font-semibold text-white/90 backdrop-blur-sm transition-colors hover:border-primary hover:text-primary max-md:hidden"
             >
               {t.home.ctaQuote}
             </MagneticButton>

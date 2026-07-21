@@ -51,7 +51,18 @@ export default function Footer() {
               {company.tagline}. Accompagnement commercial, technique et logistique pour
               vos projets en Afrique et à l&apos;international.
             </p>
-            <p className="mt-4 text-xs text-white/40">{company.founders}</p>
+            <p className="mt-4 text-xs text-white/40">
+              {t.footer.holding}{" "}
+              <a
+                href={company.parentHolding.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/55 transition-colors hover:text-primary"
+              >
+                {company.parentHolding.name}
+              </a>
+            </p>
+            <p className="mt-2 text-xs text-white/40">{company.founders}</p>
           </div>
 
           {navColumns.map((column) => (

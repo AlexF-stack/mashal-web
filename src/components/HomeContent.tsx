@@ -9,6 +9,7 @@ import FounderSection from "@/components/FounderSection";
 import Hero from "@/components/Hero";
 import FeaturedMachines from "@/components/FeaturedMachines";
 import CategoryFinder from "@/components/CategoryFinder";
+import CoreServices from "@/components/CoreServices";
 import TrustStrip from "@/components/TrustStrip";
 import { Reveal } from "@/components/motion/Reveal";
 import { MagneticButton } from "@/components/motion/MagneticButton";
@@ -42,8 +43,7 @@ export default function HomeContent() {
   return (
     <>
       <Hero />
-      <CategoryFinder />
-      <FeaturedMachines />
+      <CoreServices />
       <TrustStrip />
 
       <section className="border-b border-[color:var(--border)] py-16 md:py-20">
@@ -93,6 +93,8 @@ export default function HomeContent() {
       </section>
 
       <SectorsSection />
+      <CategoryFinder />
+      <FeaturedMachines />
       <FounderSection />
       <ArticleHighlights />
 

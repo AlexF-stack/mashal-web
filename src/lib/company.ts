@@ -6,8 +6,12 @@ const phoneTel =
 
 export const company = {
   name: "Mashal Equipment",
-  tagline: "Équipements lourds, pièces et support cycle de vie",
+  tagline: "Des machines et des hommes en qui vous pouvez avoir confiance",
   location: "Cotonou, Bénin",
+  parentHolding: {
+    name: "HERNA HOLDING",
+    url: "https://www.hernaholding.com",
+  },
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "contact@mashal.equipment",
   salesEmail: "commercial@mashal.equipment",
   techEmail: "tech@mashal.equipment",

@@ -71,7 +71,10 @@ export default function SavPageContent() {
               const copy = t.serviceOffers[service.key];
               return (
                 <Reveal key={service.key} delay={index * 0.05} blur={false}>
-                  <div className="grid gap-4 py-7 md:grid-cols-[56px_1fr_1.2fr] md:items-start">
+                  <div
+                    id={service.key === "training" ? "formation" : undefined}
+                    className="grid gap-4 py-7 md:grid-cols-[56px_1fr_1.2fr] md:items-start"
+                  >
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/12 text-primary">
                       <Icon className="h-5 w-5" />
                     </div>

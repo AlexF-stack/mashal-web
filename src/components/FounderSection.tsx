@@ -1,17 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, BadgeCheck, HeartHandshake, ShieldCheck } from "lucide-react";
+import { ArrowRight, BadgeCheck, HeartHandshake, ShieldCheck, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { founderProfile } from "@/lib/site-content";
 import { Reveal } from "@/components/motion/Reveal";
 import { useI18n } from "@/lib/i18n-context";
 
-const founderIcons = [ShieldCheck, HeartHandshake, BadgeCheck];
+const founderIcons = [ShieldCheck, HeartHandshake, Sparkles, BadgeCheck];
+const valueKeys = ["h1", "h2", "h3", "h4"] as const;
 
 export default function FounderSection() {
   const { t } = useI18n();
-  const highlights = [t.founder.h1, t.founder.h2, t.founder.h3];
 
   return (
     <section id="fondateurs" className="py-16 md:py-24">
@@ -51,14 +51,21 @@ export default function FounderSection() {
               </div>
 
               <ul className="mt-8 space-y-4">
-                {highlights.map((item, index) => {
+                {valueKeys.map((key, index) => {
                   const Icon = founderIcons[index] ?? BadgeCheck;
                   return (
-                    <li key={item} className="flex items-start gap-4">
+                    <li key={key} className="flex items-start gap-4">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/12 text-primary">
                         <Icon className="h-5 w-5" />
                       </div>
-                      <p className="pt-2 text-sm font-semibold text-foreground/80">{item}</p>
+                      <div className="pt-1">
+                        <p className="text-sm font-semibold text-foreground/85">
+                          {t.founder[key]}
+                        </p>
+                        <p className="mt-1 text-sm text-foreground/60">
+                          {t.founder[`${key}Text`]}
+                        </p>
+                      </div>
                     </li>
                   );
                 })}
