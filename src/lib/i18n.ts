@@ -1,3 +1,5 @@
+import { expertisesFr, expertisesEn } from "@/lib/expertises-i18n";
+
 export const fr = {
   nav: {
     services: "Expertises",
@@ -73,27 +75,52 @@ export const fr = {
       {
         title: "Formation",
         text: "Montée en compétence des opérateurs et encadrement sécurisé sur vos équipements.",
-        href: "/sav#formation",
+        href: "/expertises#formation",
+        points: [
+          "Sécurité, conduite et maintenance de 1er niveau",
+          "Sur site ou en centre, programme sur mesure",
+          "Rapport et suivi post-formation",
+        ],
       },
       {
         title: "Consultation & assistance technique",
         text: "Diagnostic, conseil et accompagnement pour optimiser vos parcs et vos chantiers.",
-        href: "/sav",
+        href: "/expertises#consultation",
+        points: [
+          "Audit de parc et diagnostic technique",
+          "Dimensionnement chantier et TCO",
+          "Plan d'action chiffré avec nos ingénieurs",
+        ],
       },
       {
         title: "Service après-vente",
         text: "Maintenance préventive et corrective, interventions sur site et remise en route.",
-        href: "/sav",
+        href: "/expertises#sav",
+        points: [
+          "Tickets SAV avec suivi dédié",
+          "Intervention urgente ou planifiée",
+          "Historique et contrats de maintenance",
+        ],
       },
       {
         title: "Pièces de rechange",
         text: "Pièces d'origine, accessoires, lubrifiants et disponibilité pour limiter les arrêts.",
-        href: "/pieces",
+        href: "/expertises#pieces",
+        points: [
+          "Compatibilité vérifiée avant expédition",
+          "Stocks critiques et kits d'usure",
+          "Livraison chantier ou export",
+        ],
       },
       {
         title: "Gestion de chantiers",
         text: "Pilotage BTP, mines, ouvrages hydrauliques et projets d'infrastructure complexe.",
-        href: "/a-propos#chantiers",
+        href: "/expertises#chantiers",
+        points: [
+          "Coordination engins, pièces et SAV",
+          "Suivi uptime et reporting terrain",
+          "BTP, mines & hydraulique",
+        ],
       },
     ],
     machinesNote: "Besoin d'un engin ?",
@@ -102,14 +129,24 @@ export const fr = {
   siteManagement: {
     eyebrow: "Gestion de chantiers",
     title: "BTP, mines & ouvrages hydrauliques",
-    text: "Mashal coordonne engins, équipes, pièces et SAV pour sécuriser vos chantiers — bien au-delà de la vente de matériel.",
+    text: "Mashal coordonne engins, équipes, pièces et SAV pour sécuriser vos chantiers — de l'étude à la mise en service, avec un interlocuteur unique.",
     cta: "Parler à un chef de projet",
     items: [
-      { title: "BTP & infrastructure", text: "Terrassement, routes, ouvrages d'art et coordination multi-engins." },
-      { title: "Mines & carrières", text: "Production, maintenance de parc et disponibilité pièces critiques." },
-      { title: "Hydraulique & fluides", text: "Assistance technique, diagnostics et remise en service rapide." },
+      {
+        title: "BTP & infrastructure",
+        text: "Terrassement, routes, ouvrages d'art, coordination multi-engins et respect des jalons projet.",
+      },
+      {
+        title: "Mines & carrières",
+        text: "Production, maintenance de parc, pièces critiques et maximisation de l'uptime.",
+      },
+      {
+        title: "Hydraulique & fluides",
+        text: "Assistance technique sur systèmes hydrauliques, diagnostics et remise en service rapide.",
+      },
     ],
   },
+  expertises: expertisesFr,
   catalogTeaser: {
     eyebrow: "Parc machines",
     title: "Un catalogue, pas notre seule activité",
@@ -569,27 +606,52 @@ export const en: typeof fr = {
       {
         title: "Training",
         text: "Operator upskilling and safe supervision on your equipment.",
-        href: "/sav#formation",
+        href: "/expertises#formation",
+        points: [
+          "Safety, operation and first-level maintenance",
+          "On-site or center, custom program",
+          "Report and post-training follow-up",
+        ],
       },
       {
         title: "Consulting & technical assistance",
         text: "Diagnostics, advice and support to optimize fleets and job sites.",
-        href: "/sav",
+        href: "/expertises#consultation",
+        points: [
+          "Fleet audit and technical diagnostics",
+          "Site sizing and TCO analysis",
+          "Costed action plan with our engineers",
+        ],
       },
       {
         title: "After-sales service",
         text: "Preventive and corrective maintenance, on-site interventions and restart support.",
-        href: "/sav",
+        href: "/expertises#sav",
+        points: [
+          "Dedicated support ticket tracking",
+          "Emergency or planned intervention",
+          "History and maintenance contracts",
+        ],
       },
       {
         title: "Spare parts",
         text: "OEM parts, accessories, lubricants and availability to limit downtime.",
-        href: "/pieces",
+        href: "/expertises#pieces",
+        points: [
+          "Compatibility verified before shipping",
+          "Critical stock and wear kits",
+          "Site delivery or export",
+        ],
       },
       {
         title: "Site management",
         text: "Construction, mining, hydraulic works and complex infrastructure projects.",
-        href: "/a-propos#chantiers",
+        href: "/expertises#chantiers",
+        points: [
+          "Equipment, parts and support coordination",
+          "Uptime monitoring and field reporting",
+          "Construction, mining & hydraulics",
+        ],
       },
     ],
     machinesNote: "Need equipment?",
@@ -598,14 +660,24 @@ export const en: typeof fr = {
   siteManagement: {
     eyebrow: "Site management",
     title: "Construction, mining & hydraulic works",
-    text: "Mashal coordinates equipment, teams, parts and after-sales to secure your sites — far beyond equipment sales alone.",
+    text: "Mashal coordinates equipment, teams, parts and after-sales to secure your sites — from study to commissioning, with a single point of contact.",
     cta: "Talk to a project lead",
     items: [
-      { title: "Construction & infrastructure", text: "Earthworks, roads, civil works and multi-machine coordination." },
-      { title: "Mining & quarries", text: "Production, fleet maintenance and critical parts availability." },
-      { title: "Hydraulics & fluids", text: "Technical assistance, diagnostics and fast return to service." },
+      {
+        title: "Construction & infrastructure",
+        text: "Earthworks, roads, civil structures, multi-machine coordination and schedule control.",
+      },
+      {
+        title: "Mining & quarries",
+        text: "Production, fleet maintenance, critical parts and uptime maximization.",
+      },
+      {
+        title: "Hydraulics & fluids",
+        text: "Technical support on hydraulic systems, diagnostics and fast return to service.",
+      },
     ],
   },
+  expertises: expertisesEn,
   catalogTeaser: {
     eyebrow: "Machine fleet",
     title: "A catalog — not our only business",

@@ -21,6 +21,7 @@ export default function Footer() {
     {
       title: t.footer.services,
       links: [
+        { href: "/expertises", label: t.nav.services },
         { href: "/sav", label: t.footer.sav },
         { href: "/logistique", label: t.footer.logistics },
         { href: "/articles", label: t.footer.articles },

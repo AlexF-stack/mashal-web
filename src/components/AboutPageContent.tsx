@@ -163,36 +163,68 @@ export default function AboutPageContent() {
         id="chantiers"
         className="border-t border-[color:var(--border)] py-16 md:py-24"
       >
-        <div className="container mx-auto grid gap-8 px-6 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <Reveal>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-primary">
-              {p.chantiersEyebrow}
-            </p>
-            <h2 className="mb-4 text-3xl md:text-5xl">{p.chantiersTitle}</h2>
-            <p className="leading-relaxed text-foreground/70">{p.chantiersText}</p>
-            <Link href="/sav?type=devis" className="btn-premium btn-gold mt-8 inline-flex">
-              {p.primary}
-            </Link>
-          </Reveal>
-          <Reveal delay={0.08} blur={false}>
-            <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                {t.footer.holding} {company.parentHolding.name}
-              </p>
-              <p className="mt-4 leading-relaxed text-foreground/70">
-                Mashal Equipment s&apos;inscrit dans l&apos;écosystème HERNA HOLDING aux côtés de
-                Tsalach Development et The Pertinent Group.
-              </p>
-              <a
-                href={company.parentHolding.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex text-sm font-bold uppercase tracking-[0.16em] text-primary hover:underline"
-              >
-                {company.parentHolding.name} →
-              </a>
-            </div>
-          </Reveal>
+        <div className="container mx-auto px-6">
+          {(() => {
+            const sites = t.expertises.items.sites;
+            return (
+              <>
+                <Reveal className="mb-10 max-w-3xl">
+                  <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-primary">
+                    {p.chantiersEyebrow}
+                  </p>
+                  <h2 className="mb-4 text-3xl md:text-5xl">{sites.title}</h2>
+                  <p className="text-lg font-medium text-primary/90">{sites.tagline}</p>
+                  <p className="mt-4 leading-relaxed text-foreground/70">{sites.intro}</p>
+                  <p className="mt-3 leading-relaxed text-foreground/60">{sites.body}</p>
+                </Reveal>
+
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  {sites.highlights.map((highlight, index) => (
+                    <Reveal key={highlight.title} delay={index * 0.05} blur={false}>
+                      <div className="h-full rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6">
+                        <h3 className="mb-2 text-sm font-bold uppercase tracking-[0.12em] text-primary">
+                          {highlight.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-foreground/65">{highlight.text}</p>
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
+
+                <Reveal delay={0.1} className="mt-10 flex flex-wrap gap-4">
+                  <Link href="/expertises#chantiers" className="btn-premium btn-gold inline-flex">
+                    {sites.cta}
+                  </Link>
+                  <Link
+                    href="/sav?type=devis"
+                    className="inline-flex items-center rounded-full border border-[color:var(--border)] px-6 py-3 text-sm font-bold uppercase tracking-wide hover:border-primary/40"
+                  >
+                    {p.primary}
+                  </Link>
+                </Reveal>
+
+                <Reveal delay={0.12} className="mt-12">
+                  <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+                      {t.footer.holding} {company.parentHolding.name}
+                    </p>
+                    <p className="mt-4 leading-relaxed text-foreground/70">
+                      Mashal Equipment s&apos;inscrit dans l&apos;écosystème HERNA HOLDING aux côtés de
+                      Tsalach Development et The Pertinent Group.
+                    </p>
+                    <a
+                      href={company.parentHolding.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex text-sm font-bold uppercase tracking-[0.16em] text-primary hover:underline"
+                    >
+                      {company.parentHolding.name} →
+                    </a>
+                  </div>
+                </Reveal>
+              </>
+            );
+          })()}
         </div>
       </section>
     </>

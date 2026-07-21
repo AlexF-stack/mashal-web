@@ -31,6 +31,20 @@ export default function PiecesPageContent() {
         backgroundImage={siteVisuals.parts}
       />
 
+      <section className="border-b border-[color:var(--border)] bg-[color:var(--surface)] py-10">
+        <div className="container mx-auto flex flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-[0.28em] text-primary">
+              {t.expertises.items.parts.title}
+            </p>
+            <p className="mt-2 text-lg font-semibold">{t.expertises.items.parts.tagline}</p>
+          </div>
+          <Link href="/expertises#pieces" className="btn-premium btn-gold inline-flex shrink-0">
+            {t.common.learnMore}
+          </Link>
+        </div>
+      </section>
+
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-6">
           <Reveal>

@@ -39,7 +39,7 @@ export default function SiteManagementSection() {
         </div>
 
         <Reveal delay={0.12} className="mt-10 text-center">
-          <Link href="/a-propos#chantiers" className="btn-premium btn-gold inline-flex">
+          <Link href="/expertises#chantiers" className="btn-premium btn-gold inline-flex">
             {s.cta}
             <ArrowRight className="h-4 w-4" />
           </Link>

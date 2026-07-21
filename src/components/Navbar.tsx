@@ -31,7 +31,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const desktopLinks = [
-    { label: t.nav.services, href: "/#services" },
+    { label: t.nav.services, href: "/expertises" },
     { label: t.nav.sav, href: "/sav" },
     { label: t.nav.pieces, href: "/pieces" },
     { label: t.nav.machines, href: "/machines" },
@@ -163,7 +163,7 @@ export default function Navbar() {
                 <div className="flex-1 overflow-y-auto p-6">
                   <div className="grid gap-1">
                     {[
-                      { label: t.nav.services, href: "/#services", icon: Sparkles },
+                      { label: t.nav.services, href: "/expertises", icon: Sparkles },
                       { label: t.nav.sav, href: "/sav", icon: Headset },
                       { label: t.nav.pieces, href: "/pieces", icon: PackageSearch },
                       { label: t.nav.machines, href: "/machines", icon: Truck },

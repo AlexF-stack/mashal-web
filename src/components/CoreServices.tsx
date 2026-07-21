@@ -49,14 +49,30 @@ export default function CoreServices() {
                   <h3 className="mb-2 text-lg font-semibold group-hover:text-primary">
                     {item.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-foreground/60">{item.text}</p>
+                  <p className="mb-4 text-sm leading-relaxed text-foreground/60">{item.text}</p>
+                  {"points" in item && item.points && (
+                    <ul className="mt-auto space-y-1.5 border-t border-[color:var(--border)] pt-4">
+                      {item.points.map((point) => (
+                        <li
+                          key={point}
+                          className="text-xs leading-relaxed text-foreground/55 before:mr-2 before:text-primary before:content-['•']"
+                        >
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </Link>
               </Reveal>
             );
           })}
         </div>
 
-        <Reveal delay={0.1} className="mt-8 text-center">
+        <Reveal delay={0.1} className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <Link href="/expertises" className="btn-premium btn-gold inline-flex">
+            {t.common.learnMore}
+            <ArrowUpRight className="ml-1 h-4 w-4" />
+          </Link>
           <p className="text-sm text-foreground/50">
             {t.coreServices.machinesNote}{" "}
             <Link href="/machines" className="font-semibold text-primary hover:underline">
