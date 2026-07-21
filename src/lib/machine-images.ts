@@ -7,7 +7,7 @@ const categoryFallback: Record<string, string> = {
   "Construction Routière": "niveleuse-160hp",
   "Mines & Carrières": "pelle-miniere-33t",
   "Industrie & Entreposage": "chariot-elevateur-5t",
-  "Agriculture & Sylviculture": "tracteur-agricole-150hp",
+  "Agriculture & Sylviculture": "moissonneuse-batteuse",
   "Gestion des Déchets": "compacteur-decharge",
   Services: "groupe-electrogene-100kva",
 };

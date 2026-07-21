@@ -5,11 +5,11 @@ import Image from "next/image";
 import { Suspense } from "react";
 import { Boxes, Filter, Settings2, Truck } from "lucide-react";
 import PageHero from "@/components/PageHero";
-import PartsStockTable from "@/components/PartsStockTable";
 import ContactForm from "@/components/ContactForm";
 import { partsFamilies, siteVisuals } from "@/lib/site-content";
 import { useI18n } from "@/lib/i18n-context";
 import { Reveal } from "@/components/motion/Reveal";
+import PartsRequestPanel from "@/components/PartsRequestPanel";
 
 const icons = [Filter, Settings2, Truck];
 
@@ -113,7 +113,7 @@ export default function PiecesPageContent() {
 
       <section className="border-t border-[color:var(--border)] py-16">
         <div className="container mx-auto px-6">
-          <PartsStockTable />
+          <PartsRequestPanel />
         </div>
       </section>
 

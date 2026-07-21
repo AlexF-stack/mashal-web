@@ -4,8 +4,10 @@ import { useState } from "react";
 import { FileText, Image as ImageIcon, Settings, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import type { Machine } from "@/types/machine";
+import { companyDocuments } from "@/lib/documents";
 
 interface MachineDetailsTabsProps {
   specs: React.ReactNode;
@@ -13,27 +15,32 @@ interface MachineDetailsTabsProps {
   imageUrl: string;
 }
 
-export default function MachineDetailsTabs({ specs, imageUrl }: MachineDetailsTabsProps) {
+export default function MachineDetailsTabs({
+  specs,
+  machine,
+  imageUrl,
+}: MachineDetailsTabsProps) {
   const [activeTab, setActiveTab] = useState("specs");
 
   const tabs = [
     { id: "specs", label: "Caractéristiques", icon: Settings },
     { id: "documents", label: "Documents", icon: FileText },
-    { id: "gallery", label: "Galerie", icon: ImageIcon },
+    { id: "gallery", label: "Photo", icon: ImageIcon },
   ];
 
   return (
     <div className="space-y-8">
-      <div className="flex gap-2 p-1.5 rounded-2xl border border-white/5 glass w-fit">
+      <div className="glass flex w-fit gap-2 rounded-2xl border border-white/5 p-1.5">
         {tabs.map((tab) => (
           <button
             key={tab.id}
+            type="button"
             onClick={() => setActiveTab(tab.id)}
             className={cn(
-              "flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all",
+              "flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold transition-all",
               activeTab === tab.id
                 ? "bg-primary text-background shadow-lg"
-                : "text-foreground/60 hover:bg-white/5"
+                : "text-foreground/60 hover:bg-white/5",
             )}
           >
             <tab.icon className="h-4 w-4" />
@@ -58,43 +65,69 @@ export default function MachineDetailsTabs({ specs, imageUrl }: MachineDetailsTa
 
           {activeTab === "documents" && (
             <div className="rounded-[2rem] border border-white/8 bg-white/5 p-8 backdrop-blur-xl">
-              <h3 className="text-2xl mb-6">Documentation technique</h3>
+              <h3 className="mb-3 text-2xl">Documentation disponible</h3>
+              <p className="mb-6 text-sm leading-relaxed text-foreground/60">
+                Documents officiels Mashal. Pour une fiche constructeur spécifique à{" "}
+                {machine.designation.fr}, ouvrez une demande auprès de notre équipe.
+              </p>
               <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  "Fiche technique complète (PDF)",
-                  "Manuel d'entretien (Extrait)",
-                  "Catalogue pièces de rechange",
-                  "Guide de sécurité",
-                ].map((doc) => (
-                  <div key={doc} className="flex items-center justify-between p-4 rounded-xl border border-white/10 bg-white/5 hover:border-primary/40 transition-all cursor-pointer group">
-                    <div className="flex items-center gap-3">
-                      <FileText className="h-5 w-5 text-primary" />
-                      <span className="text-sm font-semibold">{doc}</span>
+                <a
+                  href={companyDocuments.catalogue.href}
+                  download={companyDocuments.catalogue.filename}
+                  className="group flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-primary/40"
+                >
+                  <div className="flex items-center gap-3">
+                    <FileText className="h-5 w-5 text-primary" />
+                    <div>
+                      <span className="block text-sm font-semibold">Catalogue machines (PDF)</span>
+                      <span className="text-xs text-foreground/45">
+                        {companyDocuments.catalogue.sizeLabel}
+                      </span>
                     </div>
-                    <Download className="h-4 w-4 text-foreground/40 group-hover:text-primary transition-colors" />
                   </div>
-                ))}
+                  <Download className="h-4 w-4 text-foreground/40 group-hover:text-primary" />
+                </a>
+                <a
+                  href={companyDocuments.presentation.href}
+                  download={companyDocuments.presentation.filename}
+                  className="group flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-4 transition-all hover:border-primary/40"
+                >
+                  <div className="flex items-center gap-3">
+                    <FileText className="h-5 w-5 text-primary" />
+                    <div>
+                      <span className="block text-sm font-semibold">Présentation Mashal (PDF)</span>
+                      <span className="text-xs text-foreground/45">
+                        {companyDocuments.presentation.sizeLabel}
+                      </span>
+                    </div>
+                  </div>
+                  <Download className="h-4 w-4 text-foreground/40 group-hover:text-primary" />
+                </a>
               </div>
+              <Link
+                href={`/sav?type=devis&ref=${encodeURIComponent(machine.id)}`}
+                className="mt-6 inline-flex text-sm font-bold uppercase tracking-[0.14em] text-primary hover:underline"
+              >
+                Demander la documentation technique →
+              </Link>
             </div>
           )}
 
           {activeTab === "gallery" && (
             <div className="rounded-[2rem] border border-white/8 bg-white/5 p-8 backdrop-blur-xl">
-              <h3 className="text-2xl mb-6">Galerie d&apos;images</h3>
-              <div className="grid gap-4 grid-cols-2 md:grid-cols-3">
-                {[1, 2, 3, 4, 5, 6].map((i) => (
-                  <div key={i} className="relative aspect-square overflow-hidden rounded-xl border border-white/10 group cursor-zoom-in">
-                    <Image
-                      src={imageUrl}
-                      alt={`Vue ${i}`}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110 brightness-75 group-hover:brightness-100"
-                    />
-                  </div>
-                ))}
+              <h3 className="mb-6 text-2xl">Photo de référence</h3>
+              <div className="relative mx-auto aspect-[16/10] max-w-2xl overflow-hidden rounded-2xl border border-white/10">
+                <Image
+                  src={imageUrl}
+                  alt={machine.designation.fr}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 640px"
+                  className="object-cover"
+                />
               </div>
-              <p className="mt-6 text-xs text-foreground/40 italic">
-                Photos contractuelles du modèle de référence. Les configurations peuvent varier.
+              <p className="mt-6 text-xs text-foreground/45">
+                Visuel de référence pour ce type d&apos;équipement. La configuration finale peut
+                varier selon options et disponibilité — confirmation sur devis.
               </p>
             </div>
           )}

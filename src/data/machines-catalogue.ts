@@ -636,7 +636,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Tracteur 4 RM pour travaux agricoles, traction d'outils et manutention rurale.",
       "en": "4WD tractor for farm work, implement towing and rural handling."
     },
-    "image_id": "tracteur-agricole-150hp"
+    "image_id": "moissonneuse-batteuse"
   },
   {
     "id": "tracteur-7515-cab",
@@ -649,7 +649,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Tracteur compact avec cabine pour confort opérateur et polyvalence parcelle.",
       "en": "Compact cab tractor for operator comfort and field versatility."
     },
-    "image_id": "tracteur-agricole-150hp"
+    "image_id": "pulverisateur-automoteur"
   },
   {
     "id": "tracteur-enjambeur-5105mh",
@@ -662,7 +662,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Tracteur enjambeur pour cultures hautes, viticulture et arboriculture.",
       "en": "High-clearance tractor for tall crops, viticulture and arboriculture."
     },
-    "image_id": "tracteur-agricole-150hp"
+    "image_id": "semoir-precision"
   },
   {
     "id": "tracteur-t68",
@@ -675,7 +675,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Tracteur mécanique avec chargeur frontal intégré pour exploitation polyvalente.",
       "en": "Mechanical-drive tractor with front loader for versatile farm operations."
     },
-    "image_id": "tracteur-agricole-150hp"
+    "image_id": "chargeuse-pneus-3t"
   },
   {
     "id": "tracteur-mf-9s",
@@ -688,7 +688,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Tracteur haut de gamme à transmission continuously variable pour grandes exploitations.",
       "en": "Premium CVT tractor for large-scale farming operations."
     },
-    "image_id": "tracteur-agricole-150hp"
+    "image_id": "moissonneuse-batteuse"
   },
   {
     "id": "transporteur-arst-evo5",
@@ -701,7 +701,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Transporteur tout-terrain 1 place pour déplacements en exploitation et zones difficiles.",
       "en": "Single-seat utility transporter for farm mobility and rough terrain."
     },
-    "image_id": "tracteur-agricole-150hp"
+    "image_id": "camion-benne-6x4"
   },
   {
     "id": "transporteur-ct-2places",
@@ -714,7 +714,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Transporteur biplace pour équipes terrain, serres et grandes exploitations.",
       "en": "Two-seat utility transporter for field teams, greenhouses and large farms."
     },
-    "image_id": "tracteur-agricole-150hp"
+    "image_id": "dechiqueteur-bois"
   },
   {
     "id": "remorque-bascule-1essieu",

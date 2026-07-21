@@ -5,8 +5,8 @@ import { ArrowLeft, ArrowDownToLine, Container, Cog, Gauge, Weight } from "lucid
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import ProductPageButtons from "@/components/ProductPageButtons";
-import Machine3DViewer from "@/components/Machine3DViewer";
-import { getMachineImage } from "@/lib/machine-images";
+import MachineHeroImage from "@/components/MachineHeroImage";
+import { getMachineImage, getMachineImageFallback } from "@/lib/machine-images";
 import { getMachineHighlights, getMachineSummary } from "@/lib/machine-copy";
 import { formatLengthMmOrMeters, formatMass, formatMassRange } from "@/lib/machine-format";
 import machinesData from "@/data/machines-catalogue";
@@ -55,33 +55,49 @@ export default async function MachinePage({ params }: MachinePageProps) {
 
   const highlights = getMachineHighlights(machine);
   const imageUrl = getMachineImage(machine);
+  const fallbackUrl = getMachineImageFallback(machine);
+
+  const powerKw =
+    machine.net_power_kw ?? machine.rated_power_kw ?? machine.gross_power_kw ?? null;
+  const powerHp = machine.net_power_hp ?? machine.rated_power_hp ?? null;
+  const mass =
+    formatMass(machine.operating_mass_kg) ??
+    formatMassRange(machine.weight_min, machine.weight_max) ??
+    formatMass(machine.weight_min);
 
   const specsOverview = [
-    {
-      icon: Cog,
-      label: "Puissance nette",
-      value: machine.net_power_kw ? `${machine.net_power_kw} kW` : "N/A",
-    },
-    {
-      icon: Weight,
-      label: "Poids opérationnel",
-      value: machine.operating_mass_kg
-        ? (formatMass(machine.operating_mass_kg) ?? "N/A")
-        : machine.weight_min
-          ? (formatMass(machine.weight_min) ?? "N/A")
-          : "N/A",
-    },
-    {
-      icon: Gauge,
-      label: "Vitesse max",
-      value: machine.max_speed_kmh ? `${machine.max_speed_kmh} km/h` : "N/A",
-    },
-    {
-      icon: Container,
-      label: "Capacité godet",
-      value: machine.bucket_val ? `${machine.bucket_val} m³` : "N/A",
-    },
-  ];
+    powerKw
+      ? {
+          icon: Cog,
+          label: "Puissance",
+          value: powerHp ? `${powerKw} kW / ${powerHp} hp` : `${powerKw} kW`,
+        }
+      : null,
+    machine.engine_brand_model
+      ? { icon: Cog, label: "Moteur", value: machine.engine_brand_model }
+      : null,
+    mass ? { icon: Weight, label: "Poids opérationnel", value: mass } : null,
+    machine.max_speed_kmh
+      ? { icon: Gauge, label: "Vitesse max", value: `${machine.max_speed_kmh} km/h` }
+      : null,
+    machine.bucket_val
+      ? { icon: Container, label: "Capacité godet", value: `${machine.bucket_val} m³` }
+      : null,
+    machine.depth_val
+      ? {
+          icon: ArrowDownToLine,
+          label: "Profondeur max",
+          value: formatLengthMmOrMeters(machine.depth_val) ?? `${machine.depth_val} mm`,
+        }
+      : null,
+    machine.breakout_force_kN
+      ? {
+          icon: Gauge,
+          label: "Force d'arrachement",
+          value: `${machine.breakout_force_kN} kN`,
+        }
+      : null,
+  ].filter(Boolean) as { icon: typeof Cog; label: string; value: string }[];
 
   const specsContent = (
     <div className="space-y-12">
@@ -228,15 +244,11 @@ export default async function MachinePage({ params }: MachinePageProps) {
 
           <div className="grid gap-12 lg:grid-cols-[1fr_400px]">
             <div className="space-y-12">
-              {/* Machine 3D Viewer / Image */}
-              <div className="space-y-6">
-                <Machine3DViewer 
-                  posterUrl={imageUrl} 
-                />
-                <p className="text-center text-xs text-foreground/40 font-bold uppercase tracking-widest">
-                  Expérience interactive : pivotez le modèle ou affichez-le en AR sur votre chantier
-                </p>
-              </div>
+              <MachineHeroImage
+                src={imageUrl}
+                fallbackSrc={fallbackUrl}
+                alt={`${machine.designation.fr} — Mashal Equipment`}
+              />
 
               <MachineDetailsTabs 
                 specs={specsContent} 
@@ -262,20 +274,29 @@ export default async function MachinePage({ params }: MachinePageProps) {
                     ))}
                   </div>
                 )}
-                <div className="space-y-4">
-                  {specsOverview.map((spec) => {
-                    const Icon = spec.icon;
-                    return (
-                      <div key={spec.label} className="flex items-center gap-4">
-                        <Icon className="h-5 w-5 text-primary" />
-                        <div>
-                          <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">{spec.label}</p>
-                          <p className="text-lg">{spec.value}</p>
+                {specsOverview.length > 0 ? (
+                  <div className="space-y-4">
+                    {specsOverview.map((spec) => {
+                      const Icon = spec.icon;
+                      return (
+                        <div key={spec.label} className="flex items-center gap-4">
+                          <Icon className="h-5 w-5 text-primary" />
+                          <div>
+                            <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">
+                              {spec.label}
+                            </p>
+                            <p className="text-lg">{spec.value}</p>
+                          </div>
                         </div>
-                      </div>
-                    );
-                  })}
-                </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <p className="text-sm leading-relaxed text-foreground/60">
+                    Spécifications détaillées disponibles sur devis — indiquez le modèle à notre
+                    équipe technique.
+                  </p>
+                )}
               </div>
 
               {/* Action Buttons */}

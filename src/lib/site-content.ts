@@ -118,65 +118,6 @@ export const partsFamilies = [
   },
 ];
 
-export const stockParts = [
-  {
-    sku: "CUM-FLTR-8.3",
-    name: "Filtre à huile haute performance",
-    compatibility: "Pelle 33T / Moteur HM8.3",
-    availability: "En stock" as const,
-    family: "Moteur & filtration",
-  },
-  {
-    sku: "PERK-INJ-1104",
-    name: "Injecteur carburant Perkins",
-    compatibility: "Tractopelle / Série 1104C",
-    availability: "En stock" as const,
-    family: "Moteur & filtration",
-  },
-  {
-    sku: "LUB-HYD-ISO46",
-    name: "Huile hydraulique ISO 46 - fût 200L",
-    compatibility: "Gamme chantier",
-    availability: "Sous 72h" as const,
-    family: "Hydraulique & transmission",
-  },
-  {
-    sku: "HYD-HOSE-1IN",
-    name: "Flexible hydraulique 1\" haute pression",
-    compatibility: "Pelles 20–45T",
-    availability: "En stock" as const,
-    family: "Hydraulique & transmission",
-  },
-  {
-    sku: "KIT-WEAR-60T",
-    name: "Kit d'usure godet et dents",
-    compatibility: "Pelle 60T",
-    availability: "Sur commande" as const,
-    family: "Train roulant & usure",
-  },
-  {
-    sku: "CHAIN-TRACK-33T",
-    name: "Chaîne de train de roulement",
-    compatibility: "Pelle chenilles 33T",
-    availability: "Sous 72h" as const,
-    family: "Train roulant & usure",
-  },
-  {
-    sku: "AIR-FLTR-CAT",
-    name: "Filtre à air primaire",
-    compatibility: "Chargeuses / compacteurs",
-    availability: "En stock" as const,
-    family: "Moteur & filtration",
-  },
-  {
-    sku: "SEAL-KIT-CYL",
-    name: "Kit joints vérin principal",
-    compatibility: "Pelles hydrauliques",
-    availability: "Sur commande" as const,
-    family: "Hydraulique & transmission",
-  },
-];
-
 export const serviceOffers = [
   { key: "planned" as const },
   { key: "diagnostic" as const },
@@ -199,9 +140,9 @@ export const siteVisuals = {
   sav: "/visuals/sav-maintenance.jpg",
   logistics: "/visuals/logistics-port.jpg",
   loader: "/visuals/wheel-loader.jpg",
-  road: "/images/machines/niveleuse-160hp.webp",
-  agriculture: "/images/machines/tracteur-agricole-150hp.webp",
-  waste: "/images/machines/compacteur-decharge.webp",
-  warehouse: "/images/machines/chariot-elevateur-5t.webp",
+  road: "/visuals/road.webp",
+  agriculture: "/images/machines/moissonneuse-batteuse.webp",
+  waste: "/visuals/waste.webp",
+  warehouse: "/visuals/warehouse.webp",
   founders: "/fondateurs-dossou.jpeg",
 } as const;
