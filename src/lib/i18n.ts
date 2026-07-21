@@ -441,7 +441,7 @@ export const fr = {
   },
   founder: {
     title: "Une vision portée par le couple fondateur",
-    subtitle: "Mr Ithiel DOSSOU & Mykem DOSSOU",
+    subtitle: "Wayisuhu Zannude Dossou & Mykem DOSSOU",
     intro:
       "Direction engagée, proche du terrain et attentive aux réalités des exploitants et acheteurs publics.",
     body1:
@@ -936,7 +936,7 @@ export const en: typeof fr = {
   },
   founder: {
     title: "A vision led by the founding couple",
-    subtitle: "Mr Ithiel DOSSOU & Mykem DOSSOU",
+    subtitle: "Wayisuhu Zannude Dossou & Mykem DOSSOU",
     intro:
       "Committed leadership, close to the field and attentive to operators and public buyers.",
     body1:

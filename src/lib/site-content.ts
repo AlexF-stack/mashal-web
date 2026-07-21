@@ -1,8 +1,8 @@
 export const founderProfile = {
   title: "Une vision portée par le couple fondateur",
-  subtitle: "Mr Ithiel DOSSOU & Mykem DOSSOU",
+  subtitle: "Wayisuhu Zannude Dossou & Mykem DOSSOU",
   image: "/fondateurs-dossou.jpeg",
-  imageAlt: "Le couple fondateur Mr Ithiel DOSSOU et Mykem DOSSOU",
+  imageAlt: "Le couple fondateur Wayisuhu Zannude Dossou et Mykem DOSSOU",
   intro:
     "Mashal Equipment s'appuie sur une direction engagée, proche du terrain et attentive aux réalités des exploitants, des entrepreneurs et des acheteurs publics.",
   body: [

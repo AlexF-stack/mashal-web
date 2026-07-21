@@ -19,7 +19,7 @@ export const company = {
   phoneTel,
   hours: "Lun–Ven · 8h–18h (GMT+1)",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mashal.equipment",
-  founders: "Mr Ithiel DOSSOU & Mykem DOSSOU",
+  founders: "Wayisuhu Zannude Dossou & Mykem DOSSOU",
 } as const;
 
 export const companyLinks = {
