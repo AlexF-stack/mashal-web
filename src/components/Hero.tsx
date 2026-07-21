@@ -29,8 +29,8 @@ export default function Hero() {
     >
       <motion.div style={{ y }} className="absolute inset-0 z-0">
         <Image
-          src={siteVisuals.worksite}
-          alt="Engin de chantier Mashal Equipment"
+          src={siteVisuals.sav}
+          alt="Équipe technique Mashal Equipment"
           fill
           priority
           sizes="100vw"

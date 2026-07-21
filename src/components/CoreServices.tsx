@@ -4,26 +4,16 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   ClipboardCheck,
-  Container,
   HardHat,
   Headset,
   PackageSearch,
-  Truck,
   UserCog,
 } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { serviceIcons } from "@/lib/category-icons";
 import { useI18n } from "@/lib/i18n-context";
 
-const icons = [
-  UserCog,
-  ClipboardCheck,
-  Headset,
-  PackageSearch,
-  HardHat,
-  Truck,
-] as const;
+const icons = [UserCog, ClipboardCheck, Headset, PackageSearch, HardHat] as const;
 
 export default function CoreServices() {
   const { t } = useI18n();
@@ -43,9 +33,9 @@ export default function CoreServices() {
           <p className="leading-relaxed text-foreground/65">{t.coreServices.lead}</p>
         </Reveal>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {items.map((item, index) => {
-            const Icon = icons[index] ?? serviceIcons.machines;
+            const Icon = icons[index];
             return (
               <Reveal key={item.href} delay={index * 0.05} blur={false}>
                 <Link
@@ -65,6 +55,15 @@ export default function CoreServices() {
             );
           })}
         </div>
+
+        <Reveal delay={0.1} className="mt-8 text-center">
+          <p className="text-sm text-foreground/50">
+            {t.coreServices.machinesNote}{" "}
+            <Link href="/machines" className="font-semibold text-primary hover:underline">
+              {t.coreServices.machinesLink}
+            </Link>
+          </p>
+        </Reveal>
       </div>
     </section>
   );

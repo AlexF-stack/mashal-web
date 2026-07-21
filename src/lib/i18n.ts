@@ -1,5 +1,6 @@
 export const fr = {
   nav: {
+    services: "Expertises",
     machines: "Machines",
     pieces: "Pièces",
     articles: "Articles",
@@ -59,9 +60,9 @@ export const fr = {
     articlesText: "Choisir, exploiter et maintenir vos équipements sur le long terme.",
     articlesAll: "Tous les articles",
     articlesRead: "Lire",
-    ctaTitle: "Un projet machine, pièces ou",
-    ctaAccent: "export",
-    ctaSub: "Modèle, délai, urgence — réponse claire et actionnable.",
+    ctaTitle: "Formation, SAV, pièces ou",
+    ctaAccent: "gestion de chantier",
+    ctaSub: "Décrivez votre besoin — un interlocuteur technique vous répond sous 24 h.",
     ctaButton: "Contacter l'équipe",
   },
   coreServices: {
@@ -94,20 +95,68 @@ export const fr = {
         text: "Pilotage BTP, mines, ouvrages hydrauliques et projets d'infrastructure complexe.",
         href: "/a-propos#chantiers",
       },
-      {
-        title: "Vente de machines",
-        text: "Engins lourds sélectionnés pour la fiabilité, avec qualification et devis rapide.",
-        href: "/machines",
-      },
+    ],
+    machinesNote: "Besoin d'un engin ?",
+    machinesLink: "Consulter le parc machines",
+  },
+  siteManagement: {
+    eyebrow: "Gestion de chantiers",
+    title: "BTP, mines & ouvrages hydrauliques",
+    text: "Mashal coordonne engins, équipes, pièces et SAV pour sécuriser vos chantiers — bien au-delà de la vente de matériel.",
+    cta: "Parler à un chef de projet",
+    items: [
+      { title: "BTP & infrastructure", text: "Terrassement, routes, ouvrages d'art et coordination multi-engins." },
+      { title: "Mines & carrières", text: "Production, maintenance de parc et disponibilité pièces critiques." },
+      { title: "Hydraulique & fluides", text: "Assistance technique, diagnostics et remise en service rapide." },
     ],
   },
-  pages: {
+  catalogTeaser: {
+    eyebrow: "Parc machines",
+    title: "Un catalogue, pas notre seule activité",
+    text: "52 références qualifiables — mais Mashal intervient surtout sur la formation, le SAV, les pièces et le pilotage de vos chantiers.",
+    cta: "Voir le catalogue",
+  },
+  chat: {
+    title: "Assistant Mashal",
+    status: "En ligne",
+    placeholder: "Décrivez votre besoin…",
+    footer: "Assistant guidé · orienté services terrain",
+    welcome:
+      "Bonjour — je vous oriente vers la bonne expertise Mashal : formation, consultation, SAV, pièces ou gestion de chantier. Que recherchez-vous ?",
+    options: {
+      training: "Formation",
+      consulting: "Consultation technique",
+      sav: "Service après-vente",
+      parts: "Pièces de rechange",
+      sites: "Gestion de chantier",
+      machines: "Parc machines",
+      contact: "Parler à un expert",
+      menu: "Retour au menu",
+    },
+    replies: {
+      training:
+        "Nous formons vos opérateurs sur site ou en centre — sécurité, productivité et bonnes pratiques machine. Souhaitez-vous planifier une session ?",
+      consulting:
+        "Nos ingénieurs réalisent diagnostic, audit de parc et recommandations pour vos chantiers BTP, miniers ou hydrauliques. Quel est votre contexte ?",
+      sav: "Ouvrez un ticket SAV : décrivez la panne, le modèle et l'urgence — intervention préventive ou corrective, sur site ou en atelier.",
+      parts: "Indiquez machine, référence ou photo — nous confirmons compatibilité et délai pour pièces d'origine et consommables.",
+      sites:
+        "Mashal pilote vos chantiers : planification, engins, équipes, pièces et SAV. BTP, mines ou ouvrages hydrauliques — décrivez votre projet.",
+      machines:
+        "Le catalogue compte 52 engins (CAT, Volvo, XCMG…). Je peux vous orienter, mais notre cœur de métier reste l'accompagnement technique.",
+      contact:
+        "Un expert Mashal vous recontacte sous 24 h (lun–ven). Vous pouvez aussi appeler ou WhatsApp depuis le site.",
+      fallback:
+        "Je couvre formation, consultation, SAV, pièces, gestion de chantier et accès au parc machines. Choisissez une option ou décrivez votre besoin.",
+    },
+  },
+    pages: {
     machines: {
       eyebrow: "Catalogue",
-      title: "Notre parc",
-      highlight: "d'engins",
+      title: "Parc machines",
+      highlight: "à qualifier",
       description:
-        "Équipements de construction et travaux publics sélectionnés pour leur fiabilité et leurs performances.",
+        "52 engins du catalogue officiel — la vente complète l'accompagnement technique, le SAV et la gestion de chantier proposés par Mashal.",
       primary: "Demande de devis",
       secondary: "Voir les pièces",
       filter: "Filtrer",
@@ -388,6 +437,7 @@ export const fr = {
 
 export const en: typeof fr = {
   nav: {
+    services: "Expertise",
     machines: "Machines",
     pieces: "Parts",
     articles: "Articles",
@@ -447,9 +497,9 @@ export const en: typeof fr = {
     articlesText: "Choose, operate and maintain equipment for the long term.",
     articlesAll: "All articles",
     articlesRead: "Read",
-    ctaTitle: "A machine, parts or",
-    ctaAccent: "export",
-    ctaSub: "Model, timeline, urgency — clear, actionable reply.",
+    ctaTitle: "Training, support, parts or",
+    ctaAccent: "site management",
+    ctaSub: "Describe your need — a technical contact replies within 24 hours.",
     ctaButton: "Contact the team",
   },
   coreServices: {
@@ -482,20 +532,68 @@ export const en: typeof fr = {
         text: "Construction, mining, hydraulic works and complex infrastructure projects.",
         href: "/a-propos#chantiers",
       },
-      {
-        title: "Machine sales",
-        text: "Heavy equipment selected for reliability, with fast qualification and quotes.",
-        href: "/machines",
-      },
     ],
+    machinesNote: "Need equipment?",
+    machinesLink: "Browse machine catalog",
+  },
+  siteManagement: {
+    eyebrow: "Site management",
+    title: "Construction, mining & hydraulic works",
+    text: "Mashal coordinates equipment, teams, parts and after-sales to secure your sites — far beyond equipment sales alone.",
+    cta: "Talk to a project lead",
+    items: [
+      { title: "Construction & infrastructure", text: "Earthworks, roads, civil works and multi-machine coordination." },
+      { title: "Mining & quarries", text: "Production, fleet maintenance and critical parts availability." },
+      { title: "Hydraulics & fluids", text: "Technical assistance, diagnostics and fast return to service." },
+    ],
+  },
+  catalogTeaser: {
+    eyebrow: "Machine fleet",
+    title: "A catalog — not our only business",
+    text: "52 references available — but Mashal focuses on training, support, parts and site management.",
+    cta: "View catalog",
+  },
+  chat: {
+    title: "Mashal Assistant",
+    status: "Online",
+    placeholder: "Describe your need…",
+    footer: "Guided assistant · service-oriented",
+    welcome:
+      "Hello — I can route you to Mashal expertise: training, consulting, support, parts or site management. What do you need?",
+    options: {
+      training: "Training",
+      consulting: "Technical consulting",
+      sav: "After-sales service",
+      parts: "Spare parts",
+      sites: "Site management",
+      machines: "Machine catalog",
+      contact: "Talk to an expert",
+      menu: "Back to menu",
+    },
+    replies: {
+      training:
+        "We train operators on site or in center — safety, productivity and best practices. Would you like to schedule a session?",
+      consulting:
+        "Our engineers provide diagnostics, fleet audits and recommendations for construction, mining or hydraulic projects.",
+      sav: "Open a support ticket: describe the fault, model and urgency — preventive or corrective, on site or in workshop.",
+      parts: "Share machine, part reference or photo — we confirm compatibility and lead time for OEM parts.",
+      sites:
+        "Mashal manages your sites: planning, equipment, teams, parts and support. Describe your BTP, mining or hydraulic project.",
+      machines:
+        "The catalog lists 52 machines (CAT, Volvo, XCMG…). I can guide you, but our core business is technical support.",
+      contact:
+        "A Mashal expert will contact you within 24 h (Mon–Fri). You can also call or WhatsApp from the site.",
+      fallback:
+        "I cover training, consulting, support, parts, site management and machine catalog access. Pick an option or describe your need.",
+    },
   },
   pages: {
     machines: {
       eyebrow: "Catalog",
-      title: "Our equipment",
-      highlight: "fleet",
+      title: "Machine fleet",
+      highlight: "to qualify",
       description:
-        "Construction and public-works machines selected for reliability and performance.",
+        "52 units from the official catalog — sales complement Mashal's technical support, after-sales and site management services.",
       primary: "Request a quote",
       secondary: "View parts",
       filter: "Filter",
