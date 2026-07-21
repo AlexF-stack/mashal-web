@@ -6,6 +6,8 @@ import { ArrowUpRight } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
 import { categoryLabel } from "@/lib/i18n";
 import { Reveal } from "@/components/motion/Reveal";
+import { IconBadge } from "@/components/ui/IconBadge";
+import { getCategoryIcon } from "@/lib/category-icons";
 import { siteVisuals } from "@/lib/site-content";
 
 const families = [
@@ -75,6 +77,13 @@ export default function CategoryFinder() {
                   className="object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                <div className="absolute top-3 left-3">
+                  <IconBadge
+                    icon={getCategoryIcon(family.category)}
+                    size="sm"
+                    variant="dark"
+                  />
+                </div>
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-3 md:p-4">
                   <span className="text-xs font-semibold leading-snug text-white md:text-sm">
                     {categoryLabel(t, family.category)}

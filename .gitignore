@@ -33,6 +33,7 @@
 # Heavy source photos — keep optimized .webp in git
 /public/images/machines/*.jpg
 /public/images/machines/*.jpeg
+/scripts/catalogue-pages/
 
 # debug
 npm-debug.log*

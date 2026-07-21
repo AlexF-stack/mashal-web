@@ -9,13 +9,13 @@ import {
   Menu,
   X,
   FolderOpen,
-  User,
-  Settings,
+  Building2,
+  Headset,
+  Container,
+  Newspaper,
+  PackageSearch,
   Calculator,
-  MessageSquare,
-  Cog,
-  ShieldCheck,
-  Globe,
+  Truck,
 } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -166,12 +166,12 @@ export default function Navbar() {
                 <div className="flex-1 overflow-y-auto p-6">
                   <div className="grid gap-1">
                     {[
-                      { label: t.nav.machines, href: "/machines", icon: Cog },
-                      { label: t.nav.pieces, href: "/pieces", icon: ShieldCheck },
-                      { label: t.nav.sav, href: "/sav", icon: Settings },
-                      { label: t.nav.logistique, href: "/logistique", icon: Globe },
-                      { label: t.nav.articles, href: "/articles", icon: MessageSquare },
-                      { label: t.nav.aPropos, href: "/a-propos", icon: User },
+                      { label: t.nav.machines, href: "/machines", icon: Truck },
+                      { label: t.nav.pieces, href: "/pieces", icon: PackageSearch },
+                      { label: t.nav.sav, href: "/sav", icon: Headset },
+                      { label: t.nav.logistique, href: "/logistique", icon: Container },
+                      { label: t.nav.articles, href: "/articles", icon: Newspaper },
+                      { label: t.nav.aPropos, href: "/a-propos", icon: Building2 },
                       { label: t.nav.outils, href: "/outils", icon: Calculator },
                     ].map((link) => (
                       <Link

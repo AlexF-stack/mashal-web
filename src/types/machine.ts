@@ -5,6 +5,11 @@ export interface Machine {
     fr: string;
     en: string;
   };
+  description?: {
+    fr: string;
+    en: string;
+  } | null;
+  image_id?: string | null;
   specs_raw?: string | null;
   extra_info?: string | null;
   engine_brand_model?: string | null;

@@ -3,19 +3,19 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import MachineCard from "./MachineCard";
-import machinesData from "../machines_master.json";
+import machinesData from "@/data/machines-catalogue";
 import { Machine } from "@/types/machine";
 import { useI18n } from "@/lib/i18n-context";
 import { Reveal } from "@/components/motion/Reveal";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 
 const FEATURED_IDS = [
-  "pelle-hydraulique-20t",
-  "niveleuse-160hp",
-  "tracteur-agricole-150hp",
-  "chargeuse-pneus-3t",
-  "compacteur-monobille-12t",
-  "chariot-elevateur-5t",
+  "pelle-cat-315cl",
+  "niveleuse-cat-160h",
+  "chargeuse-volvo-l350h",
+  "pelle-miniere-xe950pro",
+  "tracteur-mf-9s",
+  "camion-grue-160t",
 ];
 
 export default function FeaturedMachines() {

@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import MachineCard from "@/components/MachineCard";
-import machinesData from "@/machines_master.json";
+import machinesData from "@/data/machines-catalogue";
 import { Machine } from "@/types/machine";
 import { useI18n } from "@/lib/i18n-context";
 import { categoryLabel } from "@/lib/i18n";

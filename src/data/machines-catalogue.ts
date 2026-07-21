@@ -1,4 +1,7 @@
-[
+import type { Machine } from "@/types/machine";
+
+/** Catalogue officiel Mashal Equipment — extrait du PDF client. */
+export const catalogueMachines: Machine[] = [
   {
     "id": "tractopelle-cat-450e",
     "category": "Bâtiment & Construction",
@@ -780,4 +783,6 @@
     },
     "image_id": "groupe-electrogene-100kva"
   }
-]
+] as Machine[];
+
+export default catalogueMachines;

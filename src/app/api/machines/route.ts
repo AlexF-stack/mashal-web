@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import machinesData from "@/machines_master.json";
+import machinesData from "@/data/machines-catalogue";
 import { Machine } from "@/types/machine";
 
 export const dynamic = "force-dynamic";

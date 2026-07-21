@@ -58,6 +58,11 @@ export function getMachineHighlights(machine: Machine, lang: Language = "fr") {
 
 export function getMachineSummary(machine: Machine, lang: Language = "fr") {
   const name = machineName(machine, lang);
+
+  if (machine.description) {
+    return lang === "en" ? machine.description.en : machine.description.fr;
+  }
+
   const details = getMachineHighlights(machine, lang);
 
   if (details.length === 0) {

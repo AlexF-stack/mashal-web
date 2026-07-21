@@ -9,6 +9,7 @@ import { useI18n } from "@/lib/i18n-context";
 import Link from "next/link";
 import { Download, FileText, Globe2, Handshake, ShieldCheck, Sparkles, Target } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
+import { IconBadge } from "@/components/ui/IconBadge";
 
 const valueKeys = ["h1", "h2", "h3", "h4"] as const;
 const valueIcons = [ShieldCheck, Target, Sparkles, Globe2];
@@ -124,7 +125,7 @@ export default function AboutPageContent() {
               return (
                 <Reveal key={key} delay={index * 0.05} blur={false}>
                   <div className="h-full rounded-3xl border border-[color:var(--border)] p-7">
-                    <Icon className="mb-4 h-6 w-6 text-primary" />
+                    <IconBadge icon={Icon} variant="gold" className="mb-4" />
                     <h3 className="mb-2 text-lg font-semibold">{t.founder[key]}</h3>
                     <p className="text-sm leading-relaxed text-foreground/65">
                       {t.founder[`${key}Text`]}
@@ -148,7 +149,7 @@ export default function AboutPageContent() {
           </Reveal>
           <Reveal delay={0.08} blur={false}>
             <div className="rounded-3xl border border-[color:var(--border)] bg-background p-8">
-              <Handshake className="mb-4 h-8 w-8 text-primary" />
+              <IconBadge icon={Handshake} variant="gold" className="mb-4" />
               <p className="text-2xl font-semibold">HMD</p>
               <p className="mt-3 text-sm leading-relaxed text-foreground/65">
                 {p.partnerCardText}

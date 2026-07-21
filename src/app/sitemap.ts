@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import machinesData from "@/machines_master.json";
+import machinesData from "@/data/machines-catalogue";
 import { articleHighlights } from "@/lib/site-content";
 import { Machine } from "@/types/machine";
 import { company } from "@/lib/company";

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Cpu, Database, Gauge, Scale } from "lucide-react";
+import { ArrowLeft, ArrowDownToLine, Container, Cog, Gauge, Weight } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import ProductPageButtons from "@/components/ProductPageButtons";
@@ -9,7 +9,7 @@ import Machine3DViewer from "@/components/Machine3DViewer";
 import { getMachineImage } from "@/lib/machine-images";
 import { getMachineHighlights, getMachineSummary } from "@/lib/machine-copy";
 import { formatLengthMmOrMeters, formatMass, formatMassRange } from "@/lib/machine-format";
-import machinesData from "@/machines_master.json";
+import machinesData from "@/data/machines-catalogue";
 import { Machine } from "@/types/machine";
 import { Suspense } from "react";
 import MachineDetailsTabs from "@/components/MachineDetailsTabs";
@@ -39,7 +39,9 @@ export async function generateMetadata({ params }: MachinePageProps): Promise<Me
 
   return {
     title: `${machine.designation.fr} | Mashal Equipment`,
-    description: `Découvrez la fiche technique complète de ${machine.designation.fr}. ${machine.category} - Puissance, dimensions, spécifications détaillées.`,
+    description:
+      machine.description?.fr ??
+      `Fiche technique ${machine.designation.fr} — ${machine.category}.`,
   };
 }
 
@@ -52,20 +54,22 @@ export default async function MachinePage({ params }: MachinePageProps) {
   }
 
   const highlights = getMachineHighlights(machine);
-  const imageUrl = getMachineImage(machine.id);
+  const imageUrl = getMachineImage(machine);
 
   const specsOverview = [
     {
-      icon: Cpu,
+      icon: Cog,
       label: "Puissance nette",
       value: machine.net_power_kw ? `${machine.net_power_kw} kW` : "N/A",
     },
     {
-      icon: Database,
+      icon: Weight,
       label: "Poids opérationnel",
       value: machine.operating_mass_kg
         ? (formatMass(machine.operating_mass_kg) ?? "N/A")
-        : "N/A",
+        : machine.weight_min
+          ? (formatMass(machine.weight_min) ?? "N/A")
+          : "N/A",
     },
     {
       icon: Gauge,
@@ -73,7 +77,7 @@ export default async function MachinePage({ params }: MachinePageProps) {
       value: machine.max_speed_kmh ? `${machine.max_speed_kmh} km/h` : "N/A",
     },
     {
-      icon: Scale,
+      icon: Container,
       label: "Capacité godet",
       value: machine.bucket_val ? `${machine.bucket_val} m³` : "N/A",
     },

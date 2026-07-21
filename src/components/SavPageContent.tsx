@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { BadgeCheck, GraduationCap, Siren, Wrench } from "lucide-react";
+import { BadgeCheck, ClipboardList, GraduationCap, Wrench } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import { serviceOffers, siteVisuals } from "@/lib/site-content";
@@ -9,8 +9,9 @@ import ProjectSupport from "@/components/ProjectSupport";
 import { Suspense } from "react";
 import { useI18n } from "@/lib/i18n-context";
 import { Reveal } from "@/components/motion/Reveal";
+import { IconBadge } from "@/components/ui/IconBadge";
 
-const icons = [Wrench, Siren, GraduationCap, BadgeCheck];
+const icons = [Wrench, ClipboardList, GraduationCap, BadgeCheck];
 
 export default function SavPageContent() {
   const { t } = useI18n();
@@ -75,9 +76,7 @@ export default function SavPageContent() {
                     id={service.key === "training" ? "formation" : undefined}
                     className="grid gap-4 py-7 md:grid-cols-[56px_1fr_1.2fr] md:items-start"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/12 text-primary">
-                      <Icon className="h-5 w-5" />
-                    </div>
+                    <IconBadge icon={Icon} size="md" variant="gold" />
                     <h3 className="text-2xl">{copy.title}</h3>
                     <p className="leading-relaxed text-foreground/65">{copy.text}</p>
                   </div>

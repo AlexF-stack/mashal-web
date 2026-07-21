@@ -3,15 +3,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useProject } from "@/context/ProjectContext";
-import { Cpu, Database, Gauge, Scale, Plus, Check } from "lucide-react";
+import {
+  ArrowDownToLine,
+  Check,
+  Container,
+  Cog,
+  Plus,
+  Weight,
+} from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { getMachineImage } from "@/lib/machine-images";
+import { getMachineImage, getMachineImageFallback } from "@/lib/machine-images";
 import { getMachineSummary } from "@/lib/machine-copy";
 import { formatMass } from "@/lib/machine-format";
 import { Machine } from "@/types/machine";
 import { TiltCard } from "@/components/motion/TiltCard";
 import { Reveal } from "@/components/motion/Reveal";
+import { IconBadge } from "@/components/ui/IconBadge";
 import { useI18n } from "@/lib/i18n-context";
 import { categoryLabel } from "@/lib/i18n";
 
@@ -25,11 +33,11 @@ export default function MachineCard({
   const { addItem, isInProject, removeItem } = useProject();
   const { t, language } = useI18n();
   const inProject = isInProject(machine.id);
-  const [imgSrc, setImgSrc] = useState(() => getMachineImage(machine.id));
+  const [imgSrc, setImgSrc] = useState(() => getMachineImage(machine));
   const categoryName = categoryLabel(t, machine.category);
 
   const handleImageError = () => {
-    setImgSrc("/images/machines/default-machine.webp");
+    setImgSrc(getMachineImageFallback(machine));
   };
 
   const powerKW = machine.net_power_kw
@@ -94,7 +102,7 @@ export default function MachineCard({
             <div className="mb-6 grid flex-1 grid-cols-2 gap-4 border-b border-[color:var(--border)] pb-5">
               {machine.engine_brand_model && (
                 <div className="flex items-start gap-3">
-                  <Cpu className="mt-0.5 h-4 w-4 shrink-0 text-primary/70" />
+                  <IconBadge icon={Cog} size="sm" variant="outline" className="mt-0.5" />
                   <div>
                     <p className="mb-1 text-[10px] uppercase tracking-widest text-foreground/45">
                       {t.machines.specs.engine}
@@ -106,15 +114,15 @@ export default function MachineCard({
                 </div>
               )}
 
-              {machine.weight_min && (
+              {(machine.weight_min || machine.operating_mass_kg) && (
                 <div className="flex items-start gap-3">
-                  <Scale className="mt-0.5 h-4 w-4 shrink-0 text-primary/70" />
+                  <IconBadge icon={Weight} size="sm" variant="outline" className="mt-0.5" />
                   <div>
                     <p className="mb-1 text-[10px] uppercase tracking-widest text-foreground/45">
                       {t.machines.specs.weight}
                     </p>
                     <p className="text-xs font-semibold leading-tight">
-                      {formatMass(machine.weight_min)}
+                      {formatMass(machine.weight_min ?? machine.operating_mass_kg)}
                     </p>
                   </div>
                 </div>
@@ -122,7 +130,7 @@ export default function MachineCard({
 
               {machine.bucket_val && (
                 <div className="flex items-start gap-3">
-                  <Database className="mt-0.5 h-4 w-4 shrink-0 text-primary/70" />
+                  <IconBadge icon={Container} size="sm" variant="outline" className="mt-0.5" />
                   <div>
                     <p className="mb-1 text-[10px] uppercase tracking-widest text-foreground/45">
                       {t.machines.specs.bucket}
@@ -136,7 +144,7 @@ export default function MachineCard({
 
               {machine.depth_val && (
                 <div className="flex items-start gap-3">
-                  <Gauge className="mt-0.5 h-4 w-4 shrink-0 text-primary/70" />
+                  <IconBadge icon={ArrowDownToLine} size="sm" variant="outline" className="mt-0.5" />
                   <div>
                     <p className="mb-1 text-[10px] uppercase tracking-widest text-foreground/45">
                       {t.machines.specs.depth}

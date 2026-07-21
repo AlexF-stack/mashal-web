@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import MachineCard from "./MachineCard";
 import MachineSearch, { SearchFilters } from "./MachineSearch";
-import machinesData from "../machines_master.json";
+import machinesData from "@/data/machines-catalogue";
 import { Machine } from "@/types/machine";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n-context";

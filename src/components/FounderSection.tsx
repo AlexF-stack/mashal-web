@@ -5,6 +5,7 @@ import { ArrowRight, BadgeCheck, HeartHandshake, ShieldCheck, Sparkles } from "l
 import Link from "next/link";
 import { founderProfile } from "@/lib/site-content";
 import { Reveal } from "@/components/motion/Reveal";
+import { IconBadge } from "@/components/ui/IconBadge";
 import { useI18n } from "@/lib/i18n-context";
 
 const founderIcons = [ShieldCheck, HeartHandshake, Sparkles, BadgeCheck];
@@ -55,9 +56,7 @@ export default function FounderSection() {
                   const Icon = founderIcons[index] ?? BadgeCheck;
                   return (
                     <li key={key} className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/12 text-primary">
-                        <Icon className="h-5 w-5" />
-                      </div>
+                      <IconBadge icon={Icon} size="sm" variant="neutral" className="mt-0.5" />
                       <div className="pt-1">
                         <p className="text-sm font-semibold text-foreground/85">
                           {t.founder[key]}
