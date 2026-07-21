@@ -11,6 +11,8 @@ import { categoryLabel } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { siteVisuals } from "@/lib/site-content";
 import { Suspense } from "react";
+import { companyDocuments } from "@/lib/documents";
+import { Download } from "lucide-react";
 
 function MachinesCatalog() {
   const { t } = useI18n();
@@ -56,6 +58,28 @@ function MachinesCatalog() {
         secondaryLabel={t.pages.machines.secondary}
         backgroundImage={siteVisuals.loader}
       />
+
+      <section className="border-b border-[color:var(--border)] bg-[color:var(--surface)] py-8">
+        <div className="container mx-auto flex flex-col items-start justify-between gap-4 px-6 sm:flex-row sm:items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-primary">
+              {t.pages.about.catalogueTitle}
+            </p>
+            <p className="mt-1 text-sm text-foreground/65">{t.pages.about.catalogueText}</p>
+          </div>
+          <a
+            href={companyDocuments.catalogue.href}
+            download={companyDocuments.catalogue.filename}
+            className="btn-premium btn-gold inline-flex shrink-0"
+          >
+            <Download className="h-4 w-4" />
+            {t.pages.about.download}
+            <span className="font-normal normal-case tracking-normal opacity-80">
+              · {companyDocuments.catalogue.sizeLabel}
+            </span>
+          </a>
+        </div>
+      </section>
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-6">

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
@@ -7,6 +8,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { useI18n } from "@/lib/i18n-context";
 import type { ExpertiseKey } from "@/lib/expertises-i18n";
+import { siteVisuals } from "@/lib/site-content";
 import { cn } from "@/lib/utils";
 
 type ExpertiseBlockProps = {
@@ -19,6 +21,7 @@ export default function ExpertiseBlock({ expertiseKey, icon, index }: ExpertiseB
   const { t } = useI18n();
   const page = t.expertises.page;
   const item = t.expertises.items[expertiseKey];
+  const imageSrc = siteVisuals.expertise[expertiseKey];
   const reversed = index % 2 === 1;
 
   return (
@@ -30,20 +33,36 @@ export default function ExpertiseBlock({ expertiseKey, icon, index }: ExpertiseB
       )}
     >
       <div className="container mx-auto px-6">
+        <Reveal blur={false} className="mb-10 overflow-hidden rounded-[2rem] border border-[color:var(--border)]">
+          <div className="relative aspect-[21/9] min-h-[220px] w-full md:aspect-[2.4/1] md:min-h-[320px]">
+            <Image
+              src={imageSrc}
+              alt={item.title}
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority={index === 0}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-6 md:p-10">
+              <p className="mb-2 text-xs font-bold uppercase tracking-[0.28em] text-primary">
+                {String(index + 1).padStart(2, "0")} · {page.eyebrow}
+              </p>
+              <h2 className="max-w-3xl text-3xl text-white md:text-5xl">{item.title}</h2>
+              <p className="mt-2 max-w-2xl text-base text-white/80 md:text-lg">{item.tagline}</p>
+            </div>
+          </div>
+        </Reveal>
+
         <div
           className={cn(
             "grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start",
             reversed && "lg:[direction:rtl] lg:*:[direction:ltr]",
           )}
         >
-          <Reveal blur={false}>
+          <Reveal delay={0.04} blur={false}>
             <div className="lg:sticky lg:top-28">
               <IconBadge icon={icon} variant="gold" className="mb-5" />
-              <p className="mb-2 text-xs font-bold uppercase tracking-[0.28em] text-primary">
-                {String(index + 1).padStart(2, "0")}
-              </p>
-              <h2 className="mb-3 text-3xl leading-tight md:text-4xl">{item.title}</h2>
-              <p className="mb-5 text-lg font-medium text-primary/90">{item.tagline}</p>
               <p className="mb-4 leading-relaxed text-foreground/70">{item.intro}</p>
               <p className="mb-8 leading-relaxed text-foreground/60">{item.body}</p>
               <Link href={item.ctaHref} className="btn-premium btn-gold inline-flex">

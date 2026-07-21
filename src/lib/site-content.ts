@@ -140,9 +140,17 @@ export const siteVisuals = {
   sav: "/visuals/sav-maintenance.jpg",
   logistics: "/visuals/logistics-port.jpg",
   loader: "/visuals/wheel-loader.jpg",
-  road: "/visuals/road.webp",
+  road: "/images/machines/finisseur-asphalte-6m.webp",
   agriculture: "/images/machines/moissonneuse-batteuse.webp",
-  waste: "/visuals/waste.webp",
-  warehouse: "/visuals/warehouse.webp",
+  waste: "/images/machines/compacteur-decharge.webp",
+  warehouse: "/images/machines/chariot-elevateur-5t.webp",
   founders: "/fondateurs-dossou.jpeg",
+  /** Grandes images par pilier d'expertise */
+  expertise: {
+    training: "/visuals/sav-maintenance.jpg",
+    consulting: "/visuals/wheel-loader.jpg",
+    sav: "/visuals/excavator-worksite.jpg",
+    parts: "/visuals/parts-stock.jpg",
+    sites: "/mashal_hero_mining.png",
+  },
 } as const;

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { company, companyLinks } from "@/lib/company";
+import { companyDocuments } from "@/lib/documents";
 import { useI18n } from "@/lib/i18n-context";
 
 export default function Footer() {
@@ -16,6 +17,11 @@ export default function Footer() {
         { href: "/machines", label: t.footer.machines },
         { href: "/pieces", label: t.footer.pieces },
         { href: "/outils", label: t.footer.tools },
+        {
+          href: companyDocuments.catalogue.href,
+          label: t.pages.about.catalogueTitle,
+          download: companyDocuments.catalogue.filename,
+        },
       ],
     },
     {
@@ -74,10 +80,20 @@ export default function Footer() {
               </h4>
               <ul className="space-y-3 text-sm text-white/60">
                 {column.links.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="transition-colors hover:text-primary">
-                      {link.label}
-                    </Link>
+                  <li key={link.href + link.label}>
+                    {"download" in link && link.download ? (
+                      <a
+                        href={link.href}
+                        download={link.download}
+                        className="transition-colors hover:text-primary"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link href={link.href} className="transition-colors hover:text-primary">
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -1,14 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Truck } from "lucide-react";
+import { ArrowRight, Download, Truck } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { useI18n } from "@/lib/i18n-context";
+import { companyDocuments } from "@/lib/documents";
 
-/** Secondary catalog entry — machines are available but not the primary message */
+/** Entrée catalogue + téléchargement PDF officiel */
 export default function CatalogTeaser() {
   const { t } = useI18n();
   const c = t.catalogTeaser;
+  const pdf = companyDocuments.catalogue;
 
   return (
     <section className="border-b border-[color:var(--border)] py-12 md:py-16">
@@ -22,14 +24,27 @@ export default function CatalogTeaser() {
               <h2 className="mb-2 text-2xl md:text-3xl">{c.title}</h2>
               <p className="text-sm leading-relaxed text-foreground/65 md:text-base">{c.text}</p>
             </div>
-            <Link
-              href="/machines"
-              className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[color:var(--border)] bg-background px-6 py-3 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
-            >
-              <Truck className="h-4 w-4 text-primary" />
-              {c.cta}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+              <a
+                href={pdf.href}
+                download={pdf.filename}
+                className="btn-premium btn-gold inline-flex justify-center"
+              >
+                <Download className="h-4 w-4" />
+                {t.pages.about.download}
+                <span className="font-normal normal-case tracking-normal opacity-80">
+                  · {pdf.sizeLabel}
+                </span>
+              </a>
+              <Link
+                href="/machines"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--border)] bg-background px-6 py-3 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
+              >
+                <Truck className="h-4 w-4 text-primary" />
+                {c.cta}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </Reveal>
       </div>
