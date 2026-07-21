@@ -25,6 +25,7 @@ export default function Footer() {
         { href: "/logistique", label: t.footer.logistics },
         { href: "/articles", label: t.footer.articles },
         { href: "/a-propos", label: t.footer.about },
+        { href: "/a-propos#documents", label: t.footer.brochures },
       ],
     },
   ];

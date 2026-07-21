@@ -4,9 +4,10 @@ import FounderSection from "@/components/FounderSection";
 import PageHero from "@/components/PageHero";
 import { siteVisuals } from "@/lib/site-content";
 import { company } from "@/lib/company";
+import { companyDocuments } from "@/lib/documents";
 import { useI18n } from "@/lib/i18n-context";
 import Link from "next/link";
-import { Globe2, ShieldCheck, Sparkles, Target } from "lucide-react";
+import { Download, FileText, Globe2, Handshake, ShieldCheck, Sparkles, Target } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 
 const valueKeys = ["h1", "h2", "h3", "h4"] as const;
@@ -15,6 +16,21 @@ const valueIcons = [ShieldCheck, Target, Sparkles, Globe2];
 export default function AboutPageContent() {
   const { t } = useI18n();
   const p = t.pages.about;
+
+  const downloads = [
+    {
+      key: "presentation",
+      title: p.presentationTitle,
+      text: p.presentationText,
+      doc: companyDocuments.presentation,
+    },
+    {
+      key: "catalogue",
+      title: p.catalogueTitle,
+      text: p.catalogueText,
+      doc: companyDocuments.catalogue,
+    },
+  ] as const;
 
   return (
     <>
@@ -49,6 +65,48 @@ export default function AboutPageContent() {
         </div>
       </section>
 
+      <section
+        id="documents"
+        className="border-b border-[color:var(--border)] bg-[color:var(--surface)] py-16 md:py-20"
+      >
+        <div className="container mx-auto px-6">
+          <Reveal className="mb-10 max-w-2xl">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-primary">
+              {p.documentsEyebrow}
+            </p>
+            <h2 className="mb-4 text-3xl md:text-5xl">{p.documentsTitle}</h2>
+            <p className="leading-relaxed text-foreground/65">{p.documentsLead}</p>
+          </Reveal>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {downloads.map((item, index) => (
+              <Reveal key={item.key} delay={index * 0.06} blur={false}>
+                <article className="flex h-full flex-col rounded-3xl border border-[color:var(--border)] bg-background p-7">
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                    <FileText className="h-5 w-5" aria-hidden />
+                  </div>
+                  <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
+                  <p className="mb-6 flex-1 text-sm leading-relaxed text-foreground/65">
+                    {item.text}
+                  </p>
+                  <a
+                    href={item.doc.href}
+                    download={item.doc.filename}
+                    className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-primary hover:underline"
+                  >
+                    <Download className="h-4 w-4" aria-hidden />
+                    {p.download}
+                    <span className="font-normal normal-case tracking-normal text-foreground/45">
+                      · {item.doc.sizeLabel}
+                    </span>
+                  </a>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <FounderSection />
 
       <section className="border-t border-[color:var(--border)] py-16 md:py-24">
@@ -79,9 +137,30 @@ export default function AboutPageContent() {
         </div>
       </section>
 
+      <section className="border-t border-[color:var(--border)] bg-[color:var(--surface)] py-16 md:py-20">
+        <div className="container mx-auto grid gap-8 px-6 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+          <Reveal>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-primary">
+              {p.partnerEyebrow}
+            </p>
+            <h2 className="mb-4 text-3xl md:text-5xl">{p.partnerTitle}</h2>
+            <p className="max-w-xl leading-relaxed text-foreground/70">{p.partnerText}</p>
+          </Reveal>
+          <Reveal delay={0.08} blur={false}>
+            <div className="rounded-3xl border border-[color:var(--border)] bg-background p-8">
+              <Handshake className="mb-4 h-8 w-8 text-primary" />
+              <p className="text-2xl font-semibold">HMD</p>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/65">
+                {p.partnerCardText}
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section
         id="chantiers"
-        className="border-t border-[color:var(--border)] bg-[color:var(--surface)] py-16 md:py-24"
+        className="border-t border-[color:var(--border)] py-16 md:py-24"
       >
         <div className="container mx-auto grid gap-8 px-6 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <Reveal>
@@ -95,7 +174,7 @@ export default function AboutPageContent() {
             </Link>
           </Reveal>
           <Reveal delay={0.08} blur={false}>
-            <div className="rounded-3xl border border-[color:var(--border)] bg-background p-8">
+            <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
                 {t.footer.holding} {company.parentHolding.name}
               </p>

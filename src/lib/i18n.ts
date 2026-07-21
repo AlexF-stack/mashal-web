@@ -181,6 +181,23 @@ export const fr = {
       chantiersTitle: "BTP, mines & ouvrages hydrauliques",
       chantiersText:
         "De la planification à la mise en service, nous coordonnons engins, pièces, équipes et SAV pour sécuriser vos chantiers les plus complexes.",
+      documentsEyebrow: "Documentation",
+      documentsTitle: "Plaquette & catalogue",
+      documentsLead:
+        "Téléchargez la présentation officielle Mashal Equipment et le catalogue machines partagés par notre équipe.",
+      presentationTitle: "Présentation Mashal Equipment",
+      presentationText:
+        "Vision, mission, valeurs, services et secteurs d'activité — le document de référence de la filiale.",
+      catalogueTitle: "Catalogue machines",
+      catalogueText:
+        "Parc d'engins et équipements lourds — consultez la gamme complète au format PDF.",
+      download: "Télécharger le PDF",
+      partnerEyebrow: "Partenaire",
+      partnerTitle: "Alliance stratégique HMD",
+      partnerText:
+        "Mashal Equipment s'appuie sur un partenariat solide avec HMD pour élargir l'offre, renforcer l'expertise technique et proposer des solutions toujours plus performantes.",
+      partnerCardText:
+        "Partenaire reconnu en équipements industriels — technologies et savoir-faire au service de vos projets.",
     },
     articles: {
       eyebrow: "Articles",
@@ -354,6 +371,7 @@ export const fr = {
     logistics: "Logistique export",
     articles: "Articles",
     about: "À propos",
+    brochures: "Plaquettes PDF",
     legal: "Mentions légales",
     privacy: "Confidentialité",
     rights: "Tous droits réservés.",
@@ -551,6 +569,23 @@ export const en: typeof fr = {
       chantiersTitle: "Construction, mining & hydraulic works",
       chantiersText:
         "From planning to commissioning, we coordinate equipment, parts, teams and after-sales to secure your most complex sites.",
+      documentsEyebrow: "Documentation",
+      documentsTitle: "Brochure & catalog",
+      documentsLead:
+        "Download the official Mashal Equipment presentation and machine catalog shared by our team.",
+      presentationTitle: "Mashal Equipment presentation",
+      presentationText:
+        "Vision, mission, values, services and sectors — the subsidiary's reference document.",
+      catalogueTitle: "Machine catalog",
+      catalogueText:
+        "Heavy equipment fleet — browse the full range in PDF format.",
+      download: "Download PDF",
+      partnerEyebrow: "Partner",
+      partnerTitle: "Strategic alliance with HMD",
+      partnerText:
+        "Mashal Equipment relies on a strong partnership with HMD to broaden our offering, strengthen technical expertise and deliver ever more capable solutions.",
+      partnerCardText:
+        "A recognized industrial equipment partner — technology and expertise at the service of your projects.",
     },
     articles: {
       eyebrow: "Articles",
@@ -723,6 +758,7 @@ export const en: typeof fr = {
     logistics: "Export logistics",
     articles: "Articles",
     about: "About",
+    brochures: "PDF brochures",
     legal: "Legal notice",
     privacy: "Privacy",
     rights: "All rights reserved.",
