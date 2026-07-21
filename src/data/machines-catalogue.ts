@@ -558,7 +558,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Gerbeur avec plateforme opérateur pour préparation de commandes et stockage moyen.",
       "en": "Platform stacker for order picking and medium-height storage."
     },
-    "image_id": "groupe-electrogene-100kva"
+    "image_id": "transpalette-electrique"
   },
   {
     "id": "transpalette-electrique-catalogue",
@@ -571,7 +571,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Transpalette électrique pour flux rapides en entrepôt et préparation logistique.",
       "en": "Electric pallet truck for fast warehouse flows and order preparation."
     },
-    "image_id": "groupe-electrogene-500kva"
+    "image_id": "chariot-elevateur-5t"
   },
   {
     "id": "grue-automotrice",
@@ -597,7 +597,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Nacelle à ciseaux pour travaux en hauteur en intérieur ou sur dalle.",
       "en": "Scissor lift for elevated work indoors or on slab."
     },
-    "image_id": "repandeuse-bitume"
+    "image_id": "pont-roulant-20t"
   },
   {
     "id": "camion-nacelle-53m",
@@ -610,7 +610,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Camion nacelle 53 m pour maintenance, éclairage public et travaux en hauteur.",
       "en": "53 m truck-mounted platform for maintenance, utilities and elevated work."
     },
-    "image_id": "gravillonneur-automoteur"
+    "image_id": "chariot-telescopique-7m"
   },
   {
     "id": "camion-grue-160t",
@@ -623,7 +623,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Grue mobile 160 t pour levage lourd — montage industriel et grands chantiers.",
       "en": "160 t mobile crane for heavy lifts — industrial assembly and major projects."
     },
-    "image_id": "balayeuse-voirie"
+    "image_id": "camion-benne-6x4"
   },
   {
     "id": "tracteur-7515",
@@ -688,7 +688,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Tracteur haut de gamme à transmission continuously variable pour grandes exploitations.",
       "en": "Premium CVT tractor for large-scale farming operations."
     },
-    "image_id": "presse-balles-hydraulique"
+    "image_id": "moissonneuse-batteuse"
   },
   {
     "id": "transporteur-arst-evo5",
@@ -701,7 +701,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Transporteur tout-terrain 1 place pour déplacements en exploitation et zones difficiles.",
       "en": "Single-seat utility transporter for farm mobility and rough terrain."
     },
-    "image_id": "dechiqueteur-bois"
+    "image_id": "camion-benne-6x4"
   },
   {
     "id": "transporteur-ct-2places",
@@ -714,7 +714,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Transporteur biplace pour équipes terrain, serres et grandes exploitations.",
       "en": "Two-seat utility transporter for field teams, greenhouses and large farms."
     },
-    "image_id": "semoir-precision"
+    "image_id": "balayeuse-aspiratrice"
   },
   {
     "id": "remorque-bascule-1essieu",
@@ -727,7 +727,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Remorque basculante pour transport de récoltes, grains et matériaux agricoles.",
       "en": "Tipping trailer for hauling crops, grain and agricultural materials."
     },
-    "image_id": "pulverisateur-automoteur"
+    "image_id": "camion-benne-6x4"
   },
   {
     "id": "benne-tandem-12-18t",
@@ -740,7 +740,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Benne tandem pour transport lourd en exploitation agricole et travaux ruraux.",
       "en": "Tandem-axle dump trailer for heavy hauling on farms and rural projects."
     },
-    "image_id": "pont-roulant-20t"
+    "image_id": "camion-hors-route-100t"
   },
   {
     "id": "groupe-electrogene-7500w",
@@ -753,7 +753,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Groupe mobile triphasé pour alimentation de chantier, atelier et secours.",
       "en": "Mobile three-phase generator for site power, workshops and backup supply."
     },
-    "image_id": "chariot-telescopique-7m",
+    "image_id": "groupe-electrogene-100kva",
     "extra_info": "12,5 L · 240/400 V · mobile triphasé"
   },
   {
@@ -767,7 +767,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Groupe diesel triphasé insonorisé pour sites industriels et applications continues.",
       "en": "Sound-attenuated three-phase diesel generator for industrial and continuous use."
     },
-    "image_id": "rouleau-tandem-9t",
+    "image_id": "groupe-electrogene-500kva",
     "engine_brand_model": "Perkins"
   },
   {
@@ -781,7 +781,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Groupe 40 kVA sur remorque pour chantiers, événements et alimentation temporaire.",
       "en": "40 kVA towable generator for job sites, events and temporary power."
     },
-    "image_id": "betonniere-portee-10m3"
+    "image_id": "groupe-electrogene-100kva"
   }
 ] as Machine[];
 
