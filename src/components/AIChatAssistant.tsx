@@ -1,56 +1,69 @@
 "use client";
 
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import Link from "next/link";
 import { X, Send, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { useI18n } from "@/lib/i18n-context";
+import { categoryLabel } from "@/lib/i18n";
 import { companyLinks } from "@/lib/company";
+import machinesData from "@/data/machines-catalogue";
+import type { Machine } from "@/types/machine";
+import {
+  type ServiceKey,
+  type ChatLink,
+  type StepServiceKey,
+  formatServiceSteps,
+  formatMachineDetail,
+  formatMachineList,
+  findMachineByLabel,
+  findMachineByCategoryLabel,
+  getCatalogCategories,
+  machineName,
+  searchMachines,
+} from "@/lib/chat-assistant";
 
 type Message = {
   role: "bot" | "user";
   text: string;
   options?: string[];
+  links?: ChatLink[];
 };
 
-type ServiceKey =
-  | "training"
-  | "consulting"
-  | "sav"
-  | "parts"
-  | "sites"
-  | "machines"
-  | "contact"
-  | "menu";
+type Flow =
+  | { type: "menu" }
+  | { type: "machines" }
+  | { type: "category"; category: string; machines: Machine[] }
+  | { type: "search"; machines: Machine[] };
+
+const SERVICE_KEYS: ServiceKey[] = [
+  "training",
+  "consulting",
+  "sav",
+  "parts",
+  "sites",
+  "machines",
+  "contact",
+  "menu",
+];
 
 function matchService(text: string, labels: Record<ServiceKey, string>): ServiceKey | null {
-  const lower = text.toLowerCase();
-  const entries: [ServiceKey, string][] = [
-    ["training", labels.training],
-    ["consulting", labels.consulting],
-    ["sav", labels.sav],
-    ["parts", labels.parts],
-    ["sites", labels.sites],
-    ["machines", labels.machines],
-    ["contact", labels.contact],
-    ["menu", labels.menu],
-  ];
-
-  for (const [key, label] of entries) {
-    if (lower.includes(label.toLowerCase()) || lower.includes(key)) {
-      return key;
-    }
+  const trimmed = text.trim();
+  for (const key of SERVICE_KEYS) {
+    if (trimmed === labels[key]) return key;
   }
 
+  const lower = trimmed.toLowerCase();
   if (/form|train|operateur|operator/.test(lower)) return "training";
   if (/consult|conseil|audit|assist|technique|technical/.test(lower)) return "consulting";
-  if (/sav|maintenance|panne|repair|support|service/.test(lower)) return "sav";
+  if (/sav|maintenance|panne|repair|support/.test(lower)) return "sav";
   if (/pi[eè]ce|part|stock|filtre|filter/.test(lower)) return "parts";
   if (/chantier|site|btp|mine|mining|hydraul|project/.test(lower)) return "sites";
-  if (/machine|engin|catalog|cat |volvo|pelle|chargeuse/.test(lower)) return "machines";
-  if (/expert|contact|rappel|call|whatsapp/.test(lower)) return "contact";
+  if (/machine|engin|catalog|cat |volvo|pelle|chargeuse|excavator|loader/.test(lower))
+    return "machines";
+  if (/expert|contact|rappel|call|whatsapp|devis|quote/.test(lower)) return "contact";
 
   return null;
 }
@@ -58,6 +71,7 @@ function matchService(text: string, labels: Record<ServiceKey, string>): Service
 export default function AIChatAssistant() {
   const { t, language } = useI18n();
   const c = t.chat;
+  const flowRef = useRef<Flow>({ type: "menu" });
 
   const mainOptions = useMemo(
     () => [
@@ -70,6 +84,11 @@ export default function AIChatAssistant() {
       c.options.contact,
     ],
     [c.options],
+  );
+
+  const categoryOptions = useMemo(
+    () => getCatalogCategories(machinesData).map((cat) => categoryLabel(t, cat)),
+    [t],
   );
 
   const welcomeMessage = useMemo(
@@ -86,57 +105,211 @@ export default function AIChatAssistant() {
   const [inputValue, setInputValue] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  const resetFlow = useCallback(() => {
+    flowRef.current = { type: "menu" };
+  }, []);
+
   useEffect(() => {
+    resetFlow();
     setMessages([welcomeMessage]);
-  }, [language, welcomeMessage]);
+  }, [language, welcomeMessage, resetFlow]);
 
   useEffect(() => {
     if (isOpen) messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isOpen]);
 
-  const replyFor = (key: ServiceKey): Message => {
-    if (key === "menu") {
-      return welcomeMessage;
-    }
+  const serviceStepsReply = useCallback(
+    (key: StepServiceKey): Message => ({
+      role: "bot",
+      text: formatServiceSteps(key, t),
+      options: [c.options.requestQuote, c.options.contact, c.options.menu],
+      links: [{ label: c.options.requestQuote, href: "/sav?type=devis" }],
+    }),
+    [c.options, t],
+  );
 
-    if (key === "contact") {
-      return {
-        role: "bot",
-        text: c.replies.contact,
-        options: [c.options.menu],
-      };
-    }
-
+  const machinesIntroReply = useCallback((): Message => {
+    flowRef.current = { type: "machines" };
     return {
       role: "bot",
-      text: c.replies[key],
-      options: [c.options.contact, c.options.menu],
+      text: `${c.product.intro}\n\n${c.product.chooseCategory}`,
+      options: [...categoryOptions, c.options.viewCatalog, c.options.menu],
+      links: [{ label: c.options.viewCatalog, href: "/machines" }],
     };
-  };
+  }, [c.options, c.product, categoryOptions]);
+
+  const categoryListReply = useCallback(
+    (category: string): Message => {
+      const list = machinesData.filter((m) => m.category === category);
+      flowRef.current = { type: "category", category, machines: list };
+      const names = list.slice(0, 8).map((m) => machineName(m, language));
+      return {
+        role: "bot",
+        text: formatMachineList(list, language, t, category),
+        options: [...names, c.options.viewCatalog, c.options.browseCategories, c.options.menu],
+        links: [{ label: c.options.viewCatalog, href: "/machines" }],
+      };
+    },
+    [c.options, language, t],
+  );
+
+  const machineDetailReply = useCallback(
+    (machine: Machine): Message => ({
+      role: "bot",
+      text: formatMachineDetail(machine, language, t),
+      options: [c.options.requestQuote, c.options.browseCategories, c.options.menu],
+      links: [
+        { label: c.product.viewSheet, href: `/machines/${machine.id}` },
+        { label: c.options.requestQuote, href: "/sav?type=devis" },
+      ],
+    }),
+    [c.options, c.product.viewSheet, language, t],
+  );
+
+  const searchResultsReply = useCallback(
+    (results: Machine[]): Message => {
+      flowRef.current = { type: "search", machines: results };
+      if (results.length === 1) {
+        return machineDetailReply(results[0]!);
+      }
+      const names = results.slice(0, 8).map((m) => machineName(m, language));
+      return {
+        role: "bot",
+        text: formatMachineList(results, language, t),
+        options: [...names, c.options.browseCategories, c.options.menu],
+      };
+    },
+    [c.options, language, machineDetailReply, t],
+  );
+
+  const resolveInput = useCallback(
+    (text: string): Message => {
+      const labels = c.options as Record<ServiceKey, string>;
+      const trimmed = text.trim();
+
+      if (trimmed === labels.menu) {
+        resetFlow();
+        return welcomeMessage;
+      }
+
+      if (trimmed === c.options.browseCategories) {
+        flowRef.current = { type: "machines" };
+        return {
+          role: "bot",
+          text: c.product.chooseCategory,
+          options: [...categoryOptions, c.options.menu],
+        };
+      }
+
+      if (trimmed === c.options.requestQuote) {
+        return {
+          role: "bot",
+          text: c.replies.contact,
+          options: [c.options.menu],
+          links: [{ label: c.options.requestQuote, href: "/sav?type=devis" }],
+        };
+      }
+
+      if (trimmed === c.options.viewCatalog) {
+        return {
+          role: "bot",
+          text: c.product.intro,
+          options: [c.options.menu],
+          links: [{ label: c.options.viewCatalog, href: "/machines" }],
+        };
+      }
+
+      const service = matchService(trimmed, labels);
+      if (service === "contact") {
+        resetFlow();
+        return {
+          role: "bot",
+          text: c.replies.contact,
+          options: [c.options.menu],
+          links: [{ label: "WhatsApp", href: companyLinks.whatsapp }],
+        };
+      }
+      if (service === "menu") {
+        resetFlow();
+        return welcomeMessage;
+      }
+      if (service === "machines") {
+        return machinesIntroReply();
+      }
+      if (
+        service === "training" ||
+        service === "consulting" ||
+        service === "sav" ||
+        service === "parts" ||
+        service === "sites"
+      ) {
+        resetFlow();
+        return serviceStepsReply(service);
+      }
+
+      const categoryKey = findMachineByCategoryLabel(machinesData, trimmed, t);
+      if (categoryKey) {
+        return categoryListReply(categoryKey);
+      }
+
+      const flow = flowRef.current;
+      const pool =
+        flow.type === "category"
+          ? flow.machines
+          : flow.type === "search"
+            ? flow.machines
+            : machinesData;
+
+      const fromList = findMachineByLabel(pool, trimmed, language);
+      if (fromList) {
+        return machineDetailReply(fromList);
+      }
+
+      const searchResults = searchMachines(machinesData, trimmed, language);
+      if (searchResults.length > 0) {
+        return searchResultsReply(searchResults);
+      }
+
+      if (trimmed.length >= 2) {
+        return {
+          role: "bot",
+          text: c.product.notFound,
+          options: [c.options.browseCategories, c.options.machines, c.options.menu],
+        };
+      }
+
+      resetFlow();
+      return {
+        role: "bot",
+        text: c.replies.fallback,
+        options: mainOptions,
+      };
+    },
+    [
+      c,
+      categoryListReply,
+      categoryOptions,
+      language,
+      machineDetailReply,
+      machinesIntroReply,
+      mainOptions,
+      resetFlow,
+      searchResultsReply,
+      serviceStepsReply,
+      t,
+      welcomeMessage,
+    ],
+  );
 
   const handleSend = (text: string) => {
     if (!text.trim()) return;
-
-    const optionLabels = c.options as Record<ServiceKey, string>;
-    const service = matchService(text, optionLabels);
 
     setMessages((prev) => [...prev, { role: "user", text }]);
     setInputValue("");
 
     window.setTimeout(() => {
-      if (service) {
-        setMessages((prev) => [...prev, replyFor(service)]);
-        return;
-      }
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "bot",
-          text: c.replies.fallback,
-          options: mainOptions,
-        },
-      ]);
-    }, 600);
+      setMessages((prev) => [...prev, resolveInput(text)]);
+    }, 500);
   };
 
   return (
@@ -195,7 +368,7 @@ export default function AIChatAssistant() {
                 >
                   <div
                     className={cn(
-                      "max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed",
+                      "max-w-[85%] whitespace-pre-wrap rounded-2xl px-4 py-3 text-sm leading-relaxed",
                       msg.role === "user"
                         ? "bg-primary font-semibold text-background shadow-lg shadow-primary/10"
                         : "border border-[color:var(--border)] bg-[color:var(--surface)] text-foreground",
@@ -203,6 +376,20 @@ export default function AIChatAssistant() {
                   >
                     {msg.text}
                   </div>
+
+                  {msg.links && msg.links.length > 0 && (
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {msg.links.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-background transition-opacity hover:opacity-90"
+                        >
+                          {link.label} →
+                        </Link>
+                      ))}
+                    </div>
+                  )}
 
                   {msg.options && (
                     <div className="mt-3 flex flex-wrap gap-2">
