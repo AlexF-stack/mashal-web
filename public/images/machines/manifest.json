@@ -388,5 +388,14 @@
     "source": "openverse",
     "validated": true,
     "updatedAt": "2026-07-19"
+  },
+  "tombereau-articule": {
+    "file": "tombereau-articule.webp",
+    "width": 1200,
+    "height": 800,
+    "sizeKb": 105,
+    "source": "openverse",
+    "validated": true,
+    "updatedAt": "2026-07-22"
   }
 }

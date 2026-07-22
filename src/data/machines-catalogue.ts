@@ -33,7 +33,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Camion articulé robuste pour transport de matériaux sur chantiers exigeants.",
       "en": "Robust articulated truck for hauling material on demanding job sites."
     },
-    "image_id": "camion-benne-6x4",
+    "image_id": "tombereau-articule",
     "engine_brand_model": "C13 Cat®",
     "bucket_val": 17.5,
     "extra_info": "Charge utile nominale 28 t · Capacité à refus 17,5 m³ (SAE 2:1)",
@@ -85,7 +85,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Décapeuse automotrice pour terrassements de grande envergure et déplacement de volumes importants.",
       "en": "Motor scraper for large-scale earthmoving and high-volume material relocation."
     },
-    "image_id": "bulldozer-d6",
+    "image_id": "decapeuse",
     "rated_power_kw": 304,
     "bucket_val": 18.4,
     "max_speed_kmh": 53.9,
@@ -115,7 +115,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Malaxeur portable pour production de béton sur petits et moyens chantiers.",
       "en": "Portable mixer for concrete production on small to mid-size job sites."
     },
-    "image_id": "auto-betonniere-3-5m3"
+    "image_id": "malaxeur-beton"
   },
   {
     "id": "betonniere-monte-charge-510l",
@@ -154,7 +154,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Aiguille vibrante électrique pour compactage du béton frais — plusieurs têtes interchangeables.",
       "en": "Electric concrete vibrator for compacting fresh concrete — multiple interchangeable heads."
     },
-    "image_id": "presse-balles-hydraulique"
+    "image_id": "aiguille-vibrante"
   },
   {
     "id": "pilonneuse-essence",
@@ -167,7 +167,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Pilonneuse manuelle pour compactage de tranchées, fondations et zones étroites.",
       "en": "Manual tamping rammer for trench, foundation and tight-area compaction."
     },
-    "image_id": "balayeuse-voirie"
+    "image_id": "pilonneuse"
   },
   {
     "id": "niveleuse-cat-160h",
@@ -231,7 +231,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Compacteur vibrant manuel pour trottoirs, tranchées et reprises localisées.",
       "en": "Walk-behind vibratory roller for sidewalks, trenches and localized rework."
     },
-    "image_id": "finisseur-asphalte-6m"
+    "image_id": "plaque-vibrante"
   },
   {
     "id": "camion-tout-terrain-cat-772",
@@ -318,7 +318,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Unité mobile de concassage et criblage pour production de granulats et valorisation de matériaux.",
       "en": "Mobile crushing and screening unit for aggregate production and material processing."
     },
-    "image_id": "broyeur-dechets-lourd",
+    "image_id": "station-concassage",
     "net_power_kw": 1250,
     "bucket_val": 30,
     "extra_info": "Projet unité XE7000E · Rayon de fouille 16 700 mm",
@@ -336,7 +336,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Concasseur mobile sur roues pour calcaire, granite et pierre de rivière — 50 à 800 tph.",
       "en": "Wheel-mounted mobile crusher for limestone, granite and river stone — 50 to 800 tph."
     },
-    "image_id": "compacteur-decharge",
+    "image_id": "concasseur-mobile",
     "net_power_kw": 280,
     "extra_info": "Entrée 1000×1200 mm · Sortie 20–50 mm · Matériaux: calcaire, gabbro, basalte"
   },
@@ -351,7 +351,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Foreuse hydraulique sur chenilles pour tunnels miniers et galeries souterraines.",
       "en": "Tracked hydraulic drill for mining tunnels and underground galleries."
     },
-    "image_id": "foreuse-rotative-lourde",
+    "image_id": "jumbo-forage",
     "extra_info": "MonteBay HC95SA · Course télescopique 1 450 mm · Profondeur de forage 3 400 mm"
   },
   {
@@ -365,7 +365,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Plate-forme de forage rotatif XCMG pour grands diamètres — mines et fondations profondes.",
       "en": "XCMG rotary drill rig for large diameters — mining and deep foundation work."
     },
-    "image_id": "pelle-lourde-45t",
+    "image_id": "foreuse-rotative-lourde",
     "extra_info": "Diamètre max. 2 200 mm · Profondeur max. 80 m",
     "weight_min": 84000,
     "operating_mass_kg": 84000
@@ -381,7 +381,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Foreuse SmartROC pour mines et carrières — forage au fond du trou, profondeur 56 m.",
       "en": "SmartROC drill for mining and quarries — down-the-hole drilling, 56 m depth."
     },
-    "image_id": "pelle-pneus-15t",
+    "image_id": "foreuse-surface",
     "net_power_kw": 403,
     "extra_info": "Diamètre 110–229 mm · Débit d'air 470 l/s",
     "weight_min": 23000,
@@ -398,7 +398,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Tombereau articulé 40 t pour transport en mine, carrière et grands chantiers.",
       "en": "40 t articulated haul truck for mining, quarry and large-site hauling."
     },
-    "image_id": "gravillonneur-automoteur",
+    "image_id": "tombereau-articule",
     "net_power_kw": 350,
     "max_speed_kmh": 60,
     "extra_info": "Poids à vide 34 t · Pente max. 45 %",
@@ -416,7 +416,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Grande niveleuse robuste développée pour mines à ciel ouvert — entretien de pistes et plateformes.",
       "en": "Heavy mining motor grader for open-pit mines — haul-road and platform maintenance."
     },
-    "image_id": "repandeuse-bitume"
+    "image_id": "niveleuse-160hp"
   },
   {
     "id": "chargeuse-souterraine-xul621",
@@ -429,7 +429,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Chargeuse compacte pour chargement en mine souterraine et galeries étroites.",
       "en": "Compact loader for underground mining and narrow-gallery loading."
     },
-    "image_id": "balayeuse-aspiratrice",
+    "image_id": "lhd-souterraine",
     "bucket_val": 10,
     "breakout_force_kN": 354,
     "extra_info": "Force de pelletage 354 kN · Traction max. 431 kN",
@@ -447,7 +447,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Camion basculant 45 t pour transport de minerai en mine souterraine.",
       "en": "45 t underground mining truck for ore haulage in sub-surface operations."
     },
-    "image_id": "pelle-lourde-45t",
+    "image_id": "camion-mine-souterraine",
     "engine_brand_model": "Volvo TAD1643VE-B",
     "max_speed_kmh": 14,
     "weight_min": 45000,
@@ -464,7 +464,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Grande chargeuse sur pneus pour chargement de tombereaux et stockage en mine/carrière.",
       "en": "Large wheel loader for haul-truck loading and stockpiling in mining and quarry."
     },
-    "image_id": "pelle-pneus-15t",
+    "image_id": "chargeuse-lourde",
     "engine_brand_model": "Volvo D16J",
     "net_power_kw": 397,
     "bucket_val": 6.2,
@@ -484,7 +484,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Grande pelle sur chenilles pour extraction, chargement et travaux de démolition lourde.",
       "en": "Large crawler excavator for extraction, loading and heavy demolition work."
     },
-    "image_id": "finisseur-asphalte-6m",
+    "image_id": "pelle-lourde-45t",
     "gross_power_kw": 340,
     "bucket_val": 2.4,
     "depth_val": 7690,
@@ -517,7 +517,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Chariot 7 t pour charges lourdes en environnement industriel intensif.",
       "en": "7 t counterbalance forklift for heavy loads in intensive industrial settings."
     },
-    "image_id": "chariot-telescopique-7m",
+    "image_id": "chariot-contrebalance",
     "weight_min": 7000,
     "operating_mass_kg": 7000
   },
@@ -532,7 +532,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Chariot à mât rétractable pour allées étroites et stockage en hauteur.",
       "en": "Reach truck for narrow aisles and high-bay storage."
     },
-    "image_id": "pont-roulant-20t"
+    "image_id": "chariot-retractable"
   },
   {
     "id": "chariot-tridirectionnel",
@@ -545,7 +545,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Chariot très étroit pour allées VNA et maximisation de la surface de stockage.",
       "en": "Very narrow aisle truck for VNA layouts and maximum storage density."
     },
-    "image_id": "transpalette-electrique"
+    "image_id": "chariot-vna"
   },
   {
     "id": "gerbeur-plateforme-l14",
@@ -558,7 +558,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Gerbeur avec plateforme opérateur pour préparation de commandes et stockage moyen.",
       "en": "Platform stacker for order picking and medium-height storage."
     },
-    "image_id": "transpalette-electrique"
+    "image_id": "gerbeur"
   },
   {
     "id": "transpalette-electrique-catalogue",
@@ -571,7 +571,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Transpalette électrique pour flux rapides en entrepôt et préparation logistique.",
       "en": "Electric pallet truck for fast warehouse flows and order preparation."
     },
-    "image_id": "chariot-elevateur-5t"
+    "image_id": "transpalette-electrique"
   },
   {
     "id": "grue-automotrice",
@@ -584,7 +584,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Grue automotrice pour levage sur chantier, industrie et maintenance lourde.",
       "en": "Mobile crane for lifting on job sites, industry and heavy maintenance."
     },
-    "image_id": "grue-tour-60m"
+    "image_id": "grue-mobile"
   },
   {
     "id": "nacelle-ciseaux-120sc",
@@ -597,7 +597,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Nacelle à ciseaux pour travaux en hauteur en intérieur ou sur dalle.",
       "en": "Scissor lift for elevated work indoors or on slab."
     },
-    "image_id": "pont-roulant-20t"
+    "image_id": "nacelle-ciseaux"
   },
   {
     "id": "camion-nacelle-53m",
@@ -610,7 +610,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Camion nacelle 53 m pour maintenance, éclairage public et travaux en hauteur.",
       "en": "53 m truck-mounted platform for maintenance, utilities and elevated work."
     },
-    "image_id": "chariot-telescopique-7m"
+    "image_id": "nacelle-camion"
   },
   {
     "id": "camion-grue-160t",
@@ -623,7 +623,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Grue mobile 160 t pour levage lourd — montage industriel et grands chantiers.",
       "en": "160 t mobile crane for heavy lifts — industrial assembly and major projects."
     },
-    "image_id": "camion-benne-6x4"
+    "image_id": "camion-grue"
   },
   {
     "id": "tracteur-7515",
@@ -636,7 +636,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Tracteur 4 RM pour travaux agricoles, traction d'outils et manutention rurale.",
       "en": "4WD tractor for farm work, implement towing and rural handling."
     },
-    "image_id": "moissonneuse-batteuse"
+    "image_id": "tracteur-agricole-150hp"
   },
   {
     "id": "tracteur-7515-cab",
@@ -649,7 +649,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Tracteur compact avec cabine pour confort opérateur et polyvalence parcelle.",
       "en": "Compact cab tractor for operator comfort and field versatility."
     },
-    "image_id": "pulverisateur-automoteur"
+    "image_id": "tracteur-cabine"
   },
   {
     "id": "tracteur-enjambeur-5105mh",
@@ -662,7 +662,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Tracteur enjambeur pour cultures hautes, viticulture et arboriculture.",
       "en": "High-clearance tractor for tall crops, viticulture and arboriculture."
     },
-    "image_id": "semoir-precision"
+    "image_id": "tracteur-enjambeur"
   },
   {
     "id": "tracteur-t68",
@@ -675,7 +675,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Tracteur mécanique avec chargeur frontal intégré pour exploitation polyvalente.",
       "en": "Mechanical-drive tractor with front loader for versatile farm operations."
     },
-    "image_id": "dechiqueteur-bois"
+    "image_id": "tracteur-chargeur"
   },
   {
     "id": "tracteur-mf-9s",
@@ -688,7 +688,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Tracteur haut de gamme à transmission continuously variable pour grandes exploitations.",
       "en": "Premium CVT tractor for large-scale farming operations."
     },
-    "image_id": "moissonneuse-batteuse"
+    "image_id": "tracteur-cabine"
   },
   {
     "id": "transporteur-arst-evo5",
@@ -701,7 +701,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Transporteur tout-terrain 1 place pour déplacements en exploitation et zones difficiles.",
       "en": "Single-seat utility transporter for farm mobility and rough terrain."
     },
-    "image_id": "camion-benne-6x4"
+    "image_id": "utv-agricole"
   },
   {
     "id": "transporteur-ct-2places",
@@ -714,7 +714,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Transporteur biplace pour équipes terrain, serres et grandes exploitations.",
       "en": "Two-seat utility transporter for field teams, greenhouses and large farms."
     },
-    "image_id": "balayeuse-aspiratrice"
+    "image_id": "utv-agricole-2places"
   },
   {
     "id": "remorque-bascule-1essieu",
@@ -727,7 +727,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Remorque basculante pour transport de récoltes, grains et matériaux agricoles.",
       "en": "Tipping trailer for hauling crops, grain and agricultural materials."
     },
-    "image_id": "camion-benne-6x4"
+    "image_id": "remorque-agricole"
   },
   {
     "id": "benne-tandem-12-18t",
@@ -740,7 +740,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Benne tandem pour transport lourd en exploitation agricole et travaux ruraux.",
       "en": "Tandem-axle dump trailer for heavy hauling on farms and rural projects."
     },
-    "image_id": "camion-hors-route-100t"
+    "image_id": "benne-agricole"
   },
   {
     "id": "groupe-electrogene-7500w",
@@ -753,7 +753,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Groupe mobile triphasé pour alimentation de chantier, atelier et secours.",
       "en": "Mobile three-phase generator for site power, workshops and backup supply."
     },
-    "image_id": "groupe-electrogene-100kva",
+    "image_id": "groupe-portable",
     "extra_info": "12,5 L · 240/400 V · mobile triphasé"
   },
   {
@@ -781,7 +781,7 @@ export const catalogueMachines: Machine[] = [
       "fr": "Groupe 40 kVA sur remorque pour chantiers, événements et alimentation temporaire.",
       "en": "40 kVA towable generator for job sites, events and temporary power."
     },
-    "image_id": "groupe-electrogene-100kva"
+    "image_id": "groupe-tractable"
   }
 ] as Machine[];
 
